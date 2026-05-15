@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Abinaya - Colophon</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <style>
+        .texture-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .torn-edge-top {
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='1200' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L0 0 Q 10 10 20 0 T 40 0 T 60 0 T 80 0 T 100 0 T 120 0 T 140 0 T 160 0 T 180 0 T 200 0 T 220 0 T 240 0 T 260 0 T 280 0 T 300 0 T 320 0 T 340 0 T 360 0 T 380 0 T 400 0 T 420 0 T 440 0 T 460 0 T 480 0 T 500 0 T 520 0 T 540 0 T 560 0 T 580 0 T 600 0 T 620 0 T 640 0 T 660 0 T 680 0 T 700 0 T 720 0 T 740 0 T 760 0 T 780 0 T 800 0 T 820 0 T 840 0 T 860 0 T 880 0 T 900 0 T 920 0 T 940 0 T 960 0 T 980 0 T 1000 0 T 1020 0 T 1040 0 T 1060 0 T 1080 0 T 1100 0 T 1120 0 T 1140 0 T 1160 0 T 1180 0 T 1200 0 L 1200 20 Z' fill='black'/%3E%3C/svg%3E");
+            mask-image: url("data:image/svg+xml,%3Csvg width='1200' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L0 0 Q 10 10 20 0 T 40 0 T 60 0 T 80 0 T 100 0 T 120 0 T 140 0 T 160 0 T 180 0 T 200 0 T 220 0 T 240 0 T 260 0 T 280 0 T 300 0 T 320 0 T 340 0 T 360 0 T 380 0 T 400 0 T 420 0 T 440 0 T 460 0 T 480 0 T 500 0 T 520 0 T 540 0 T 560 0 T 580 0 T 600 0 T 620 0 T 640 0 T 660 0 T 680 0 T 700 0 T 720 0 T 740 0 T 760 0 T 780 0 T 800 0 T 820 0 T 840 0 T 860 0 T 880 0 T 900 0 T 920 0 T 940 0 T 960 0 T 980 0 T 1000 0 T 1020 0 T 1040 0 T 1060 0 T 1080 0 T 1100 0 T 1120 0 T 1140 0 T 1160 0 T 1180 0 T 1200 0 L 1200 20 Z' fill='black'/%3E%3C/svg%3E");
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+    </style>
+    <link rel="stylesheet" href="site.css"/>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md texture-bg selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-40 bg-surface-container-low border-b border-outline-variant/30 fixed top-0 left-0 right-0">
+    <h1 class="font-headline-xl text-headline-xl text-primary-container">Abinaya's Portfolio</h1>
+    <button class="text-primary hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden'); document.getElementById('mobile-sidebar').classList.toggle('flex');">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+</header>
+
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[300px] z-50 bg-surface-container-low shadow-md hidden md:flex flex-col py-base" id="mobile-sidebar">
+    <!-- Mobile Close Button -->
+    <div class="md:hidden flex justify-end px-6 py-3">
+        <button class="text-on-surface-variant hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.add('hidden'); document.getElementById('mobile-sidebar').classList.remove('flex');">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="px-6 py-8 flex flex-col items-center border-b border-outline-variant/30">
+        <div class="w-24 h-24 rounded-2xl bg-primary-container flex items-center justify-center mb-4 overflow-hidden outline outline-2 outline-offset-4 outline-outline-variant">
+            <img alt="Curator Portrait" class="w-full h-full object-cover" src="assets/img2.jpg"/>
+        </div>
+        <h1 class="font-headline-xl text-headline-xl text-primary-container text-center leading-tight mb-2">Abinaya's Portfolio</h1>
+        <p class="font-body-md text-body-md text-on-surface-variant text-center">Automation & Robotics Engineer</p>
+    </div>
+    <nav class="flex-1 overflow-y-auto py-6 space-y-1">
+        <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="index.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">home</span><span class="font-label-md text-label-md tracking-wide">Home</span></a>
+        <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="about_me.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">person</span><span class="font-label-md text-label-md tracking-wide">About Me</span></a>
+        <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="skills.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">psychology</span><span class="font-label-md text-label-md tracking-wide">Skills</span></a>
+        <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="projects.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">work</span><span class="font-label-md text-label-md tracking-wide">Projects</span></a>
+        <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="resume.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">description</span><span class="font-label-md text-label-md tracking-wide">Resume</span></a>
+        <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="contact.html"><span class="material-symbols-outlined text-[22px]" style='font-variation-settings: "FILL" 0;'>mail</span><span class="font-label-md text-label-md tracking-wide">Contact</span></a>
+    </nav>
+    <div class="px-6 py-6 border-t border-outline-variant/30">
+        <a class="bg-secondary text-on-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="index.html">
+            <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>home</span>
+        </a>
+    </div>
+</aside>
+
+<!-- Main Content Area -->
+<main class="md:ml-[300px] pt-24 md:pt-16 pb-24 px-margin-mobile md:px-margin-desktop max-w-[calc(100vw)] md:max-w-[calc(100vw-300px)] min-h-[calc(100vh-100px)] flex flex-col justify-center items-center">
+    
+    <div class="max-w-3xl w-full text-center mb-12">
+        <h1 class="text-headline-xl font-headline-xl text-on-surface mb-6 relative inline-block">
+            Colophon
+            <div class="absolute -bottom-2 left-1/4 right-1/4 h-px bg-primary opacity-30"></div>
+        </h1>
+        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            This website serves as a digital portfolio, built with a focus on minimalism and clean interactions. Here is how it came together:
+        </p>
+    </div>
+
+    <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Design & Conception -->
+        <div class="bg-surface-container-lowest border border-outline-variant p-8 relative overflow-hidden shadow-[0_4px_20px_rgba(79,64,40,0.08)] group hover:-translate-y-1 transition-transform duration-500">
+            <div class="absolute top-0 left-0 w-full h-1 bg-primary-container"></div>
+            <div class="absolute right-4 top-4 text-outline-variant opacity-30 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-[32px]">auto_stories</span>
+            </div>
+            <h3 class="text-headline-lg-mobile font-headline-lg-mobile text-primary mb-4 border-b border-outline-variant pb-2 inline-block">Design &amp; Conception</h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">
+                The visual architecture began as a rough hand-drawn concept, focusing on an editorial, tactile binder/book navigation. Initial baseline layout generation was explored using GitHub Copilot, verified and refined using Google Stitch, and conceptualized visually with wire-diagramming assistance from Midjourney.
+            </p>
+        </div>
+
+        <!-- Development -->
+        <div class="bg-surface-container-lowest border border-outline-variant p-8 relative overflow-hidden shadow-[0_4px_20px_rgba(79,64,40,0.08)] group hover:-translate-y-1 transition-transform duration-500">
+            <div class="absolute top-0 left-0 w-full h-1 bg-secondary-container"></div>
+            <div class="absolute right-4 top-4 text-outline-variant opacity-30 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-[32px]">code</span>
+            </div>
+            <h3 class="text-headline-lg-mobile font-headline-lg-mobile text-secondary mb-4 border-b border-outline-variant pb-2 inline-block">Development</h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">
+                Handcrafted using Visual Studio Code. The architecture relies heavily on vanilla semantic HTML for a lightning-fast, structured experience.
+            </p>
+        </div>
+
+        <!-- Styling & Typography -->
+        <div class="bg-surface-container-lowest border border-outline-variant p-8 relative overflow-hidden shadow-[0_4px_20px_rgba(79,64,40,0.08)] group hover:-translate-y-1 transition-transform duration-500">
+            <div class="absolute top-0 left-0 w-full h-1 bg-tertiary-container"></div>
+            <div class="absolute right-4 top-4 text-outline-variant opacity-30 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-[32px]">text_fields</span>
+            </div>
+            <h3 class="text-headline-lg-mobile font-headline-lg-mobile text-tertiary mb-4 border-b border-outline-variant pb-2 inline-block">Styling &amp; Typography</h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">
+                Built using Tailwind CSS. Custom style configurations, specific spacing scales, and color overrides are handled via <code class="bg-surface-container px-1.5 py-0.5 rounded text-sm font-mono">tailwind-config.js</code>, with bespoke micro-adjustments and visual effects fine-tuned in <code class="bg-surface-container px-1.5 py-0.5 rounded text-sm font-mono">site.css</code>.
+            </p>
+        </div>
+
+        <!-- Interactivity -->
+        <div class="bg-surface-container-lowest border border-outline-variant p-8 relative overflow-hidden shadow-[0_4px_20px_rgba(79,64,40,0.08)] group hover:-translate-y-1 transition-transform duration-500">
+            <div class="absolute top-0 left-0 w-full h-1 bg-primary-container"></div>
+            <div class="absolute right-4 top-4 text-outline-variant opacity-30 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-[32px]">bolt</span>
+            </div>
+            <h3 class="text-headline-lg-mobile font-headline-lg-mobile text-primary mb-4 border-b border-outline-variant pb-2 inline-block">Interactivity</h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">
+                All dynamic behaviors—including the smooth page animations and tactile binder states—are driven by lightweight, performant vanilla JavaScript within <code class="bg-surface-container px-1.5 py-0.5 rounded text-sm font-mono">site.js</code> without heavy dependencies.
+            </p>
+        </div>
+
+        <!-- Infrastructure -->
+        <div class="bg-surface-container-lowest border border-outline-variant p-8 relative overflow-hidden shadow-[0_4px_20px_rgba(79,64,40,0.08)] group hover:-translate-y-1 transition-transform duration-500 md:col-span-2">
+            <div class="absolute top-0 left-0 w-full h-1 bg-secondary-container"></div>
+            <div class="absolute right-4 top-4 text-outline-variant opacity-30 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-[32px]">cloud</span>
+            </div>
+            <h3 class="text-headline-lg-mobile font-headline-lg-mobile text-secondary mb-4 border-b border-outline-variant pb-2 inline-block">Infrastructure</h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">
+                The source code is version-controlled and public on GitHub, and the live environment is powered by GitHub Pages.
+            </p>
+        </div>
+        
+    </div>
+</main>
+
+<script src="site.js"></script>
+</body>
+</html>
