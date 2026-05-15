@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abinaya-Robotics Engineering</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<script src="tailwind-config.js"></script>
+<style>
+        .writing-vertical { writing-mode: vertical-rl; text-orientation: mixed; }
+    </style>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body class="bg-surface text-on-background font-body-md text-body-md flex min-h-screen">
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-40 bg-surface-container-low border-b border-outline-variant/30 fixed top-0 left-0 right-0">
+<h1 class="font-headline-xl text-headline-xl text-primary-container">Abinaya's Portfolio</h1>
+
+<button class="text-primary hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden'); document.getElementById('mobile-sidebar').classList.toggle('flex');">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[300px] z-50 bg-surface-container-low shadow-md hidden md:flex flex-col py-base" id="mobile-sidebar">
+<!-- Mobile Close Button -->
+<div class="md:hidden flex justify-end px-6 py-3">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.add('hidden'); document.getElementById('mobile-sidebar').classList.remove('flex');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 py-8 flex flex-col items-center border-b border-outline-variant/30">
+<div class="w-24 h-24 rounded-2xl bg-primary-container flex items-center justify-center mb-4 overflow-hidden outline outline-2 outline-offset-4 outline-outline-variant">
+<img alt="Curator Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKVNYNwP9hULdehZG4z6EdydUOGCJus76-RIhN50hOQUCdhgKyVti8AUVzUtK6qkD4yBW8Fmvi58ZYgmu5bYUDcfHDQiSJB34ghfnLBpTgT-IF4yaVCutOtf7G7H99K9-7-vC_X6Qoo50kmCYDLmj1QpJ5jiyksMNADq-wbIU9R4yS94aSrDsh7FHbRVOSfNrm7K8D_5zsVkCN0b_UClOFc2T9OP7ku0i9bHgEptLTLiRWOA_81Z07-bVegatpPgKqppz8ag4VbQ"/>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container text-center leading-tight mb-2">Abinaya's Portfolio</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Automation & Robotics Engineer</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 space-y-1">
+<a class="flex items-center gap-4 text-primary font-semibold mx-3 px-4 py-4 rounded-xl border-l-4 border-primary bg-surface-container-highest/60" href="index.html"><span class="material-symbols-outlined text-[22px]" style='font-variation-settings: "FILL" 1;'>home</span><span class="font-label-md text-label-md tracking-wide">Home</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="about_me.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">person</span><span class="font-label-md text-label-md tracking-wide">About Me</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="skills.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">psychology</span><span class="font-label-md text-label-md tracking-wide">Skills</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="projects.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">work</span><span class="font-label-md text-label-md tracking-wide">Projects</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="resume.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">description</span><span class="font-label-md text-label-md tracking-wide">Resume</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="contact.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">mail</span><span class="font-label-md text-label-md tracking-wide">Contact</span></a>
+</nav>
+<div class="px-6 py-6 border-t border-outline-variant/30">
+<a class="bg-secondary text-on-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="index.html">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>home</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[300px] w-full min-h-screen pb-32">
+    
+    <section class="mx-auto pt-24 px-gutter md:px-margin-desktop relative min-h-[700px] flex flex-col items-center justify-center w-full">
+        
+        <div class="inline-flex items-center justify-center gap-4 mb-8">
+            <div class="h-px w-12 bg-primary"></div>
+            <span class="font-label-md text-label-md text-primary uppercase tracking-widest">I</span>
+            <div class="h-px w-12 bg-primary"></div>
+        </div>
+<!-- Foreground Paper (Introduction) -->
+<article class="w-full max-w-4xl bg-surface-container-lowest shadow-[0_15px_40px_-10px_rgba(79,64,40,0.15)] p-8 md:p-12 border border-outline-variant/30 rounded-DEFAULT z-10 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+<!-- Profile Picture -->
+<div class="w-64 h-64 md:w-[360px] md:h-[360px] rounded-[24px] overflow-hidden outline outline-2 outline-offset-8 outline-outline-variant/50 shrink-0 bg-primary-container">
+<img alt="Eleanor Vance Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKVNYNwP9hULdehZG4z6EdydUOGCJus76-RIhN50hOQUCdhgKyVti8AUVzUtK6qkD4yBW8Fmvi58ZYgmu5bYUDcfHDQiSJB34ghfnLBpTgT-IF4yaVCutOtf7G7H99K9-7-vC_X6Qoo50kmCYDLmj1QpJ5jiyksMNADq-wbIU9R4yS94aSrDsh7FHbRVOSfNrm7K8D_5zsVkCN0b_UClOFc2T9OP7ku0i9bHgEptLTLiRWOA_81Z07-bVegatpPgKqppz8ag4VbQ"/>
+</div>
+<!-- Text Content -->
+<div class="flex-1 w-full">
+    <div class="flex justify-between items-start mb-10">
+        <div>
+            <h3 class="font-headline-lg text-[36px] text-on-surface-variant mb-6">I'm Abinaya </h3>
+            
+            <p class="font-body-lg text-body-lg text-on-surface leading-relaxed mb-10 text-justify">
+                An Automation and robotics engineer, aiming to transition into an AI and Data Science role focused on Intelligent Robotics.<br>
+                <br>Interested in researching and bringing intelligence to hardware, combining practical experience in autonomous robotic systems and IoT with machine learning and computer vision
+            </p>
+            
+            <div class="flex flex-wrap items-center gap-6 mt-12 pt-8 border-t border-outline-variant/20">
+                <a href="about_me.html" class="group bg-tertiary-container text-on-tertiary-container font-label-md text-label-md px-8 py-4 rounded-DEFAULT hover:opacity-90 hover:scale-105 transition-all duration-300 flex items-center gap-4 inline-block"> 
+                    About Me 
+                    <span class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:translate-x-2">arrow_forward</span>
+                </a>
+                <span class="font-body-md text-body-md text-outline italic">Last Updated<br/>Mar '26 </span>
+            </div>
+        </div>
+    </div> </article> </section>
+<!-- Book Spines Navigation Shelf -->
+<section class="max-w-container-max mx-auto mt-48 px-gutter md:px-margin-desktop">
+<h2 class="text-center font-label-md text-label-md text-primary mb-8 uppercase tracking-[0.2em]">Quick Navigation</h2><div class="border-b-4 border-surface-tint/20 pb-0 flex justify-center items-end gap-2 md:gap-6 h-[300px]"><!-- About Me Book -->
+<div class="w-16 md:w-20 h-[90%] bg-surface-container-high shadow-[inset_2px_0_5px_rgba(0,0,0,0.1),-4px_0_8px_rgba(79,64,40,0.15)] flex flex-col items-center justify-between py-6 rounded-t-sm cursor-pointer hover:bg-outline-variant hover:scale-105 transition-all duration-300 border-l border-outline/20 group rotate-[10deg]">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+<span class="writing-vertical font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">ABOUT ME</span>
+<div class="w-8 h-1.5 bg-outline/30 mb-2"></div>
+</div>
+<!-- Book 1 -->
+<div class="w-16 md:w-20 h-[85%] bg-tertiary-container shadow-[inset_2px_0_5px_rgba(0,0,0,0.1),-4px_0_8px_rgba(79,64,40,0.15)] flex flex-col items-center justify-between py-6 rounded-t-sm cursor-pointer hover:bg-tertiary hover:scale-105 transition-all duration-300 border-l border-on-tertiary-container/20 group rotate-[2deg]">
+<span class="material-symbols-outlined text-on-tertiary-container group-hover:text-on-tertiary">psychology</span>
+<span class="writing-vertical font-label-md text-label-md text-on-tertiary-container group-hover:text-on-tertiary tracking-widest uppercase">SKILLS</span>
+<div class="w-8 h-1 bg-outline/30 mb-2"></div>
+</div>
+<!-- Book 2 -->
+<div class="w-16 md:w-20 h-[90%] bg-surface-container-high shadow-[inset_2px_0_5px_rgba(0,0,0,0.1),-4px_0_8px_rgba(79,64,40,0.15)] flex flex-col items-center justify-between py-6 rounded-t-sm cursor-pointer hover:bg-outline-variant hover:scale-105 transition-all duration-300 border-l border-outline/20 group rotate-[10deg]">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+<span class="writing-vertical font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">RESUME</span>
+<div class="w-8 h-1.5 bg-outline/30 mb-2"></div>
+</div>
+<!-- Book 3 -->
+<div class="w-16 md:w-20 h-[85%] bg-tertiary-container shadow-[inset_2px_0_5px_rgba(0,0,0,0.1),-4px_0_8px_rgba(79,64,40,0.15)] flex flex-col items-center justify-between py-6 rounded-t-sm cursor-pointer hover:bg-tertiary hover:scale-105 transition-all duration-300 border-l border-on-tertiary-container/20 group rotate-[2deg]">
+<span class="material-symbols-outlined text-on-tertiary-container group-hover:text-on-tertiary">work</span>
+<span class="writing-vertical font-label-md text-label-md text-on-tertiary-container group-hover:text-on-tertiary tracking-widest uppercase">PROJECTS</span>
+<div class="flex gap-1 mb-2">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container/40"></div>
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container/40"></div>
+</div>
+</div>
+<!-- Book 4 -->
+<div class="w-16 md:w-20 h-[90%] bg-surface-container-high shadow-[inset_2px_0_5px_rgba(0,0,0,0.1),-4px_0_8px_rgba(79,64,40,0.15)] flex flex-col items-center justify-between py-6 rounded-t-sm cursor-pointer hover:bg-outline-variant hover:scale-105 transition-all duration-300 border-l border-outline/20 group rotate-[10deg]">
+<span class="material-symbols-outlined text-on-surface-variant">mail</span>
+<span class="writing-vertical font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">CONTACT</span>
+<div class="w-8 h-1 bg-outline/30 mb-2"></div>
+</div>
+<!-- Leaning Book -->
+</div>
+<p class="text-center font-label-md text-label-md text-outline mt-6 uppercase tracking-widest">Select a volume to proceed</p>
+</section>
+
+<!-- Footer -->
+<div class="fixed bottom-4 right-4 bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full shadow-lg z-50 flex gap-4">
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
+</div>
+</main>
+<script src="site.js"></script>
+</body></html>

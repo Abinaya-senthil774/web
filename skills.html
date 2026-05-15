@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abinaya-Robotics Engineering</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet"/>
+<script src="tailwind-config.js"></script>
+<style>
+        .torn-edge-top {
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,20 L0,0 L10,5 L20,0 L30,8 L40,2 L50,10 L60,3 L70,12 L80,5 L90,15 L100,6 L110,18 L120,4 L130,16 L140,8 L150,19 L160,5 L170,17 L180,9 L190,20 L200,6 L210,18 L220,10 L230,19 L240,7 L250,20 L260,8 L270,17 L280,5 L290,18 L300,10 L310,19 L320,8 L330,20 L340,9 L350,18 L360,6 L370,17 L380,5 L390,19 L400,10 L410,18 L420,7 L430,20 L440,9 L450,17 L460,5 L470,19 L480,10 L490,18 L500,8 L510,20 L520,7 L530,18 L540,6 L550,19 L560,9 L570,17 L580,5 L590,20 L600,10 L610,18 L620,7 L630,19 L640,8 L650,20 L660,9 L670,17 L680,6 L690,18 L700,5 L710,19 L720,10 L730,18 L740,7 L750,20 L760,9 L770,17 L780,5 L790,19 L800,10 L810,18 L820,8 L830,20 L840,7 L850,18 L860,6 L870,19 L880,9 L890,17 L900,5 L910,20 L920,10 L930,18 L940,7 L950,19 L960,8 L970,20 L980,9 L990,17 L1000,0 L1000,20 Z" fill="black"/></svg>');
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+        }
+        .paper-texture {
+            background-color: #faf9f5;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 12px rgba(79, 64, 40, 0.08), 0 1px 3px rgba(79, 64, 40, 0.05);
+        }
+        .writing-vertical { writing-mode: vertical-rl; text-orientation: mixed; }
+      </style>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-40 bg-surface-container-low border-b border-outline-variant/30 fixed top-0 left-0 right-0">
+<h1 class="font-headline-xl text-headline-xl text-primary-container">Abinaya's Portfolio</h1>
+<button class="text-primary hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden'); document.getElementById('mobile-sidebar').classList.toggle('flex');">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[300px] z-50 bg-surface-container-low shadow-md hidden md:flex flex-col py-base" id="mobile-sidebar">
+<!-- Mobile Close Button -->
+<div class="md:hidden flex justify-end px-6 py-3">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.add('hidden'); document.getElementById('mobile-sidebar').classList.remove('flex');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 py-8 flex flex-col items-center border-b border-outline-variant/30">
+<div class="w-24 h-24 rounded-2xl bg-primary-container flex items-center justify-center mb-4 overflow-hidden outline outline-2 outline-offset-4 outline-outline-variant">
+<img alt="Curator Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKVNYNwP9hULdehZG4z6EdydUOGCJus76-RIhN50hOQUCdhgKyVti8AUVzUtK6qkD4yBW8Fmvi58ZYgmu5bYUDcfHDQiSJB34ghfnLBpTgT-IF4yaVCutOtf7G7H99K9-7-vC_X6Qoo50kmCYDLmj1QpJ5jiyksMNADq-wbIU9R4yS94aSrDsh7FHbRVOSfNrm7K8D_5zsVkCN0b_UClOFc2T9OP7ku0i9bHgEptLTLiRWOA_81Z07-bVegatpPgKqppz8ag4VbQ"/>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container text-center leading-tight mb-2">Abinaya's Portfolio</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Automation & Robotics Engineer</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="index.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">home</span><span class="font-label-md text-label-md tracking-wide">Home</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="about_me.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">person</span><span class="font-label-md text-label-md tracking-wide">About Me</span></a>
+<a class="flex items-center gap-4 text-primary font-semibold mx-3 px-4 py-4 rounded-xl border-l-4 border-primary bg-surface-container-highest/60" href="skills.html"><span class="material-symbols-outlined text-[22px]" style='font-variation-settings: "FILL" 1;'>psychology</span><span class="font-label-md text-label-md tracking-wide">Skills</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="projects.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">work</span><span class="font-label-md text-label-md tracking-wide">Projects</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="resume.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">description</span><span class="font-label-md text-label-md tracking-wide">Resume</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="contact.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">mail</span><span class="font-label-md text-label-md tracking-wide">Contact</span></a>
+</nav>
+<div class="px-6 py-6 border-t border-outline-variant/30">
+<a class="bg-secondary text-on-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="index.html">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>home</span>
+</a>
+</div>
+</aside>
+
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[300px] min-h-screen paper-texture relative pb-24">
+<!-- Mobile Header (Visible only on small screens) -->
+<!-- Page Header -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 md:pt-24 pb-12">
+<div class="text-center max-w-2xl mx-auto">
+<header class="text-center mb-24 max-w-3xl mx-auto">
+<div class="inline-flex items-center justify-center gap-4 mb-6">
+<div class="h-px w-12 bg-primary"></div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest">III</span>
+<div class="h-px w-12 bg-primary"></div>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">My Skills</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">This section serves as a bookmarked catalogue of the technical proficiencies I have refined while working on the projects.</p>
+</div>
+</section>
+<!-- Bento Grid / Bookmark Categories -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
+
+    <!-- Category 1: Programming Languages -->
+<div class="relative pl-8 md:pl-12">
+<!-- Decorative Bookmark Spine -->
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary-container rounded-r-sm shadow-sm"></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 border-b border-outline-variant pb-2 inline-block">Programming Languages</h3>
+<div class="flex flex-wrap gap-6">
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">Python</span>
+<span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">JavaScript</span>
+<span class="font-body-md text-body-md text-on-surface-variant">50%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">C++</span>
+<span class="font-body-md text-body-md text-on-surface-variant">75%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">HTML/CSS</span>
+<span class="font-body-md text-body-md text-on-surface-variant">75%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">MATLAB</span>
+<span class="font-body-md text-body-md text-on-surface-variant">85%</span>
+</div>
+</div>
+</div>
+<!-- Category 2: Simulation and Design tools -->
+<div class="relative pl-8 md:pl-12">
+<!-- Decorative Bookmark Spine -->
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-secondary rounded-r-sm shadow-sm"></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 border-b border-outline-variant pb-2 inline-block">Simulation and Design Tools</h3>
+<div class="flex flex-wrap gap-6">
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">ROS2</span>
+<span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">Webots</span>
+<span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">AutoCAD</span>
+<span class="font-body-md text-body-md text-on-surface-variant">95%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">Fusion 360</span>
+<span class="font-body-md text-body-md text-on-surface-variant">95%</span>
+</div>
+</div>
+</div>
+<!-- Category 3: Tools & Frameworks -->
+<div class="relative pl-8 md:pl-12">
+<!-- Decorative Bookmark Spine -->
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-outline rounded-r-sm shadow-sm"></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 border-b border-outline-variant pb-2 inline-block">Tools &amp; Frameworks</h3>
+<div class="flex flex-wrap gap-6">
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">Git/GitHub</span>
+<span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">PyTorch</span>
+<span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">TensorFlow and Keras</span>
+<span class="font-body-md text-body-md text-on-surface-variant">85%</span>
+</div>
+<!-- Skill Item -->
+<div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+<div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
+<span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">OpenCV</span>
+<span class="font-body-md text-body-md text-on-surface-variant">95%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="my-16 w-full h-10 torn-edge-top bg-surface-container-low opacity-50 relative"></div>
+<!-- Core Competencies Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 text-center">Core Competencies</h3>
+<div class="flex flex-wrap justify-center gap-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span>Machine Learning</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Computer Vision</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">precision_manufacturing</span>
+<span>Robotics</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+<span>Automation</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">query_stats</span>
+<span>Data Analysis</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">assignment</span>
+<span>Project Management</span>
+</span>
+</div>
+</section>
+
+<!-- Core Competencies Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 text-center">General Skills</h3>
+<div class="flex flex-wrap justify-center gap-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span>Technical communication</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Team Collaboration</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">psychology</span>
+<span>Problem Solving</span>
+</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-sm">groups</span>
+<span>Teamwork</span>
+</span>
+</div>
+</section>
+
+<!-- Footer -->
+<div class="fixed bottom-4 right-4 bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full shadow-lg z-50 flex gap-4">
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-transparent font-label-md text-label-md fixed bottom-8 left-8 z-50 shadow-md rounded-full bg-secondary dark:bg-secondary-container">
+<!-- Active State Logic dictated by prompt: suppress if not destination, but standard portfolio tabs usually persist. Suppressing based on intent instruction if strictly interpreted, but adding for semantic completeness of mobile nav. -->
+<a class="bg-secondary dark:bg-secondary-container text-on-secondary dark:text-on-secondary-container p-4 rounded-full flex items-center justify-center hover:scale-110 hover:bg-secondary-fixed-dim transition-transform duration-150 group" href="index.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="sr-only">Home</span>
+</a>
+</nav>
+<script src="site.js"></script>
+</body></html>

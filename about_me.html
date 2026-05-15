@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abinaya-Robotics Engineering</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet"/>
+<script src="tailwind-config.js"></script>
+<style>
+.torn-edge-top {
+    mask-image: url("data:image/svg+xml;utf8,<svg preserveAspectRatio=\"none\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,100 L0,5 Q5,10 10,5 Q15,0 20,5 Q25,10 30,5 Q35,0 40,5 Q45,10 50,5 Q55,0 60,5 Q65,10 70,5 Q75,0 80,5 Q85,10 90,5 Q95,0 100,5 L100,100 Z\" fill=\"black\"/></svg>");
+    mask-size: 100% 100%
+    }
+.torn-edge-bottom {
+    mask-image: url("data:image/svg+xml;utf8,<svg preserveAspectRatio=\"none\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,0 L100,0 L100,95 Q95,100 90,95 Q85,90 80,95 Q75,100 70,95 Q65,90 60,95 Q55,100 50,95 Q45,90 40,95 Q35,100 30,95 Q25,90 20,95 Q15,100 10,95 Q5,90 0,95 Z\" fill=\"black\"/></svg>");
+    mask-size: 100% 100%
+    }</style>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body class="bg-surface text-on-background font-body-md text-body-md min-h-screen flex antialiased">
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-40 bg-surface-container-low border-b border-outline-variant/30 fixed top-0 left-0 right-0">
+<h1 class="font-headline-xl text-headline-xl text-primary-container">Abinaya's Portfolio</h1>
+<button class="text-primary hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden'); document.getElementById('mobile-sidebar').classList.toggle('flex');">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[300px] z-50 bg-surface-container-low shadow-md hidden md:flex flex-col py-base" id="mobile-sidebar">
+<!-- Mobile Close Button -->
+<div class="md:hidden flex justify-end px-6 py-3">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.add('hidden'); document.getElementById('mobile-sidebar').classList.remove('flex');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 py-8 flex flex-col items-center border-b border-outline-variant/30">
+<div class="w-24 h-24 rounded-2xl bg-primary-container flex items-center justify-center mb-4 overflow-hidden outline outline-2 outline-offset-4 outline-outline-variant">
+<img alt="Curator Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKVNYNwP9hULdehZG4z6EdydUOGCJus76-RIhN50hOQUCdhgKyVti8AUVzUtK6qkD4yBW8Fmvi58ZYgmu5bYUDcfHDQiSJB34ghfnLBpTgT-IF4yaVCutOtf7G7H99K9-7-vC_X6Qoo50kmCYDLmj1QpJ5jiyksMNADq-wbIU9R4yS94aSrDsh7FHbRVOSfNrm7K8D_5zsVkCN0b_UClOFc2T9OP7ku0i9bHgEptLTLiRWOA_81Z07-bVegatpPgKqppz8ag4VbQ"/>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container text-center leading-tight mb-2">Abinaya's Portfolio</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Automation & Robotics Engineer</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="index.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">home</span><span class="font-label-md text-label-md tracking-wide">Home</span></a>
+<a class="flex items-center gap-4 text-primary font-semibold mx-3 px-4 py-4 rounded-xl border-l-4 border-primary bg-surface-container-highest/60" href="about_me.html"><span class="material-symbols-outlined text-[22px]" style='font-variation-settings: "FILL" 1;'>person</span><span class="font-label-md text-label-md tracking-wide">About Me</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="skills.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">psychology</span><span class="font-label-md text-label-md tracking-wide">Skills</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="projects.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">work</span><span class="font-label-md text-label-md tracking-wide">Projects</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="resume.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">description</span><span class="font-label-md text-label-md tracking-wide">Resume</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="contact.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">mail</span><span class="font-label-md text-label-md tracking-wide">Contact</span></a>
+</nav>
+<div class="px-6 py-6 border-t border-outline-variant/30">
+<a class="bg-secondary text-on-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="index.html">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>home</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[300px] min-h-screen pt-20 md:pt-0">
+<!-- Canvas Container -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+<!-- Journal Entry Header -->
+<header class="text-center mb-24 max-w-3xl mx-auto">
+<div class="inline-flex items-center justify-center gap-4 mb-6">
+<div class="h-px w-12 bg-primary"></div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest">II</span>
+<div class="h-px w-12 bg-primary"></div>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-8">About Me</h1>
+
+</header>
+<!-- Section 1: The Curator -->
+<section class="mb-32 relative">
+<div class="absolute -left-12 top-0 bottom-0 w-px bg-outline-variant/50 hidden lg:block"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 order-2 lg:order-1">
+<div class="relative p-2 bg-surface-container-lowest border border-outline-variant shadow-md rounded-sm transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-auto object-cover grayscale sepia-[0.3]" data-alt="A softly lit, intimate portrait shot of an antique writing desk. The scene features a vintage typewriter, scattered handwritten notes on heavy textured paper, a fountain pen resting near an open leather-bound journal, and a small stack of classic literature. The lighting is warm and directional, suggesting late afternoon sun filtering through a nearby window. The color palette emphasizes rich sepias, warm grays, and muted earth tones, perfectly aligning with an academic, tactile, and nostalgic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyo-5KYL19YQTcL1dGKVzJGMhiVA17-dFdtkcBRBvCdQLf2fnqgoFYba3V1GUg2HfODFxe2SBBnpY61E-9Gc79RBixy7nwSueA8lCyoIiAiXEQOrSqBXDAWd3u8C9mnNXiVyCs0dR9l7I6zMWBtMRMo3i63lWMkVzu4OECs_A50TbRFR0HniFbH9ITqxgWSdaj9KgqOh_U4pkchEVwxxntEARYfwCIna1e31tHKYsMDGevzk8GyvlK3CfTA45kUXwVg32H4gkw4lU"/>
+<div class="absolute bottom-4 right-4 bg-surface-container-lowest px-3 py-1 border border-outline-variant shadow-sm text-xs font-label-md text-primary transform rotate-3">
+                                Fig. 1 - The Desk
+                            </div>
+</div>
+</div>
+<div class="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary opacity-70">history_edu</span>
+                            My Journey and Focus
+                        </h2>
+<div class="space-y-4 text-on-surface-variant columns-1 md:columns-2 gap-8 text-justify">
+<p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                                I am currently pursuing my Master's in Artificial Intelligence, building upon the strong hardware and automation foundation I developed during my B.Tech in Automation and Robotics at Amrita Vishwa Vidyapeetham.  
+                            </p>
+<p>                             My fascination with how machines perceive their environment drove me to specialize in computer vision in robotics, machine learning, and deep learning.
+
+                            </p>                    
+<p>
+                                A robot is just metal, wires, an empty shell of steel and circuits; it moves, but it cannot understand. AI becomes the intelligence within the system, giving the machine the ability to learn, adapt, and make decisions. That’s where ordinary machines evolve into intelligent robots. 
+                            </p>
+<p>                             My passion lies in that exact intersection, where ordinary hardware evolves into intelligent, autonomous systems and I am currently transitioning into an AI and Data Science role with a hyper-focus on Intelligent Robotics.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Section 2: The Curator -->
+
+<section class="mb-32 relative">
+    <div class="absolute -left-12 top-0 bottom-0 w-px bg-outline-variant/50 hidden lg:block"></div>
+    
+    <div class="w-full space-y-6">
+        <h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary opacity-70">history_edu</span>
+            Working on
+        </h2>
+        
+        <div class="space-y-6 text-on-surface-variant text-left text-lg md:text-xl">
+            <p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 leading-relaxed">
+                <li>Developing algorithms for the optimal placement of ArUco Tags in complex indoor environments, validated across MATLAB, Webots, and hardware setups</li>
+            </p>
+            <p class="leading-relaxed">
+                <li>Exploring the intersection of memory and visual data through a personal composite artwork project, bridging childhood and present-day likenesses.</li>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 2: The Mission -->
+<section class="mb-32 max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 block">auto_awesome</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">My Toolkit</h2>
+<div class="bg-surface-container-low p-10 md:p-16 rounded-xl border border-outline-variant shadow-[inset_0_2px_10px_rgba(79,64,40,0.05)] relative overflow-hidden">
+<!-- Subtle corner adornments -->
+<div class="absolute top-4 left-4 w-4 h-4 border-t border-l border-primary/30"></div>
+<div class="absolute top-4 right-4 w-4 h-4 border-t border-r border-primary/30"></div>
+<div class="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-primary/30"></div>
+<div class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary/30"></div>
+
+    <ul class="inline-block text-left list-disc list-inside space-y-3 text-lg md:text-xl text-on-surface-variant not-italic">
+        <li><strong>Languages:</strong> Python, C++</li>
+        <li><strong>AI/ML & Vision:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
+        <li><strong>Robotics & Simulation:</strong> ROS2, Gazebo, Webots</li>
+        <li><strong>Hardware & IoT:</strong> Arduino Mega 2560, Raspberry Pi, ESP32</li>
+    </ul>
+</div>
+</section>
+<!-- Decorative Divider -->
+<div class="w-full h-24 mb-32 relative flex items-center justify-center">
+<div class="absolute w-full h-px bg-outline-variant"></div>
+<div class="bg-surface px-4 z-10 flex gap-2">
+<span class="w-2 h-2 rounded-full bg-primary/40"></span>
+<span class="w-2 h-2 rounded-full bg-primary/60"></span>
+<span class="w-2 h-2 rounded-full bg-primary/40"></span>
+</div>
+</div>
+<!-- Section 3: The Journey (Timeline) -->
+
+<!-- Section 3: The Journey (Timeline) -->
+<!-- Section 3: The Journey (Timeline) -->
+<section class="mb-24 max-w-3xl mx-auto">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Beyond the Code</h2>
+    <div class="relative border-l border-outline-variant ml-4 md:ml-8 space-y-16">
+        <p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+            During my free hours, I explore my creative side through digital arts, sketching, designing, photography, and writing.<br>
+            <i>(Feel free to check out some of my portfolio pieces below!)</i>                    
+        </p>
+                                                                     
+        <!-- Timeline Item 1: Arts -->
+        <div class="relative pl-8 md:pl-12">
+            <div class="absolute w-3 h-3 bg-surface border-2 border-primary rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
+            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+                <h3 class="font-headline-lg text-xl text-on-surface font-semibold">Arts</h3>
+            </div>
+            
+            <!-- Art Portfolio Images -->
+            <div class="flex flex-row gap-3 md:gap-4 mt-4">
+                <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?auto=format&fit=crop&w=400&q=80" 
+                     alt="Art Portfolio Piece 1" 
+                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=400&q=80" 
+                     alt="Art Portfolio Piece 2" 
+                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?auto=format&fit=crop&w=400&q=80" 
+                     alt="Art Portfolio Piece 3" 
+                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+            </div>
+        </div>
+
+        <!-- Timeline Item 2: Photography -->
+        <div class="relative pl-8 md:pl-12">
+            <div class="absolute w-3 h-3 bg-surface border-2 border-primary rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
+            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+                <h3 class="font-headline-lg text-xl text-on-surface font-semibold">Photography</h3>
+            </div>
+            
+            <!-- Photography Portfolio Images -->
+            <div class="flex flex-row gap-3 md:gap-4 mt-4">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=400&q=80" 
+                     alt="Photography Piece 1" 
+                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
+                <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&w=400&q=80" 
+                     alt="Photography Piece 2" 
+                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
+                <img src="https://images.unsplash.com/photo-1455218873509-8097305ee378?auto=format&fit=crop&w=400&q=80" 
+                     alt="Photography Piece 3" 
+                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
+            </div>
+        </div>
+
+        <!-- Timeline Item 3: Writings (Updated to Bullet Points) -->
+        <div class="relative pl-8 md:pl-12">
+            <div class="absolute w-3 h-3 bg-surface border-2 border-outline rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
+            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+                <h3 class="font-headline-lg text-xl text-on-surface font-semibold">Writings</h3>
+            </div>
+            
+            <!-- Writings Portfolio Links -->
+            <ul class="mt-6 space-y-4">
+                <li>
+                    <a href="/assets/article-1.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 w-fit">
+                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-xl">article</span>
+                        <span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors decoration-1 underline-offset-4 group-hover:underline">The Future of AI in Robotics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/assets/article-2.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 w-fit">
+                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-xl">article</span>
+                        <span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors decoration-1 underline-offset-4 group-hover:underline">Optimizing Navigation Algorithms</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/assets/article-3.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 w-fit">
+                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-xl">article</span>
+                        <span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors decoration-1 underline-offset-4 group-hover:underline">Sustainable Tech: A 2026 Perspective</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- Call to Action -->
+<div class="text-center mt-32 border-t border-outline-variant pt-16">
+<p class="font-body-lg text-on-surface-variant mb-6">To discuss a potential collaboration or inquire about the archives:</p>
+<a class="inline-flex items-center gap-2 bg-tertiary text-on-tertiary px-8 py-4 rounded-sm font-label-md tracking-wider hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors shadow-md border border-tertiary/80" href="contact.html">
+<span class="material-symbols-outlined text-sm">mail</span>
+                     Contact at
+                 </a>
+</div>
+</div>
+<!-- Footer -->
+<div class="fixed bottom-4 right-4 bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full shadow-lg z-50 flex gap-4">
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
+</div>
+</main>
+<script src="site.js"></script>
+</body></html>

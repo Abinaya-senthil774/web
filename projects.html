@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abinaya-Robotics Engineering</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="tailwind-config.js"></script>
+<style>.torn-edge-top {
+    mask-image: url("data:image/svg+xml;utf8,<svg viewBox=\"0 0 1000 20\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,20 L0,10 Q25,0 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 T350,10 T400,10 T450,10 T500,10 T550,10 T600,10 T650,10 T700,10 T750,10 T800,10 T850,10 T900,10 T950,10 L1000,10 L1000,20 Z\" fill=\"black\"/></svg>");
+    mask-size: 100% 20px;
+    mask-repeat: no-repeat;
+    mask-position: top;
+    padding-top: 20px
+    }
+.wood-shelf {
+    background-color: #3e2723;
+    background-image: url("https://lh3.googleusercontent.com/aida/ADBb0uir7Rc9KjPE4RneYWyGdllYgsvEEcdLUkDVmTygeD1RB1jGPv0nhDemTKUNnxRtJNcELtYTBu5LA3u8gYSgn5cFiHF6eQvjed7kcdtBUAnQ68KKHoTiHR6-4I3lz0YS3aCwqpyhUaNNEBy-jAmR5Pue8YU0iMrvyvoR80VOeIMuasuQoCD_QmjoM8Uk7ZOjBzMagTFR0V7aKErqf__RMwwvSIZ9xvEWxTjDqPeh5xYWUtOCObwmiwfILrem_zvZxo5N1Qe2XRnm4g");
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(0, 0, 0, 0.5), 0 10px 15px -3px rgba(0, 0, 0, 0.4)
+    }
+.shelf-board {
+    background-color: #2b1b17;
+    background-image: url("https://lh3.googleusercontent.com/aida/ADBb0uir7Rc9KjPE4RneYWyGdllYgsvEEcdLUkDVmTygeD1RB1jGPv0nhDemTKUNnxRtJNcELtYTBu5LA3u8gYSgn5cFiHF6eQvjed7kcdtBUAnQ68KKHoTiHR6-4I3lz0YS3aCwqpyhUaNNEBy-jAmR5Pue8YU0iMrvyvoR80VOeIMuasuQoCD_QmjoM8Uk7ZOjBzMagTFR0V7aKErqf__RMwwvSIZ9xvEWxTjDqPeh5xYWUtOCObwmiwfILrem_zvZxo5N1Qe2XRnm4g");
+    background-size: cover;
+    background-position: center bottom;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05), 0 4px 6px rgba(0, 0, 0, 0.6)
+    }</style>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body class="bg-surface text-on-surface font-body-md flex min-h-screen">
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-40 bg-surface-container-low border-b border-outline-variant/30 fixed top-0 left-0 right-0">
+<h1 class="font-headline-xl text-headline-xl text-primary-container">Abinaya's Portfolio</h1>
+<button class="text-primary hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden'); document.getElementById('mobile-sidebar').classList.toggle('flex');">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[300px] z-50 bg-surface-container-low shadow-md hidden md:flex flex-col py-base" id="mobile-sidebar">
+<!-- Mobile Close Button -->
+<div class="md:hidden flex justify-end px-6 py-3">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.add('hidden'); document.getElementById('mobile-sidebar').classList.remove('flex');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 py-8 flex flex-col items-center border-b border-outline-variant/30">
+<div class="w-24 h-24 rounded-2xl bg-primary-container flex items-center justify-center mb-4 overflow-hidden outline outline-2 outline-offset-4 outline-outline-variant">
+<img alt="Curator Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKVNYNwP9hULdehZG4z6EdydUOGCJus76-RIhN50hOQUCdhgKyVti8AUVzUtK6qkD4yBW8Fmvi58ZYgmu5bYUDcfHDQiSJB34ghfnLBpTgT-IF4yaVCutOtf7G7H99K9-7-vC_X6Qoo50kmCYDLmj1QpJ5jiyksMNADq-wbIU9R4yS94aSrDsh7FHbRVOSfNrm7K8D_5zsVkCN0b_UClOFc2T9OP7ku0i9bHgEptLTLiRWOA_81Z07-bVegatpPgKqppz8ag4VbQ"/>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container text-center leading-tight mb-2">Abinaya's Portfolio</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Automation & Robotics Engineer</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="index.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">home</span><span class="font-label-md text-label-md tracking-wide">Home</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="about_me.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">person</span><span class="font-label-md text-label-md tracking-wide">About Me</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="skills.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">psychology</span><span class="font-label-md text-label-md tracking-wide">Skills</span></a>
+<a class="flex items-center gap-4 text-primary font-semibold mx-3 px-4 py-4 rounded-xl border-l-4 border-primary bg-surface-container-highest/60" href="projects.html"><span class="material-symbols-outlined text-[22px]" style='font-variation-settings: "FILL" 1;'>work</span><span class="font-label-md text-label-md tracking-wide">Projects</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="resume.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">description</span><span class="font-label-md text-label-md tracking-wide">Resume</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="contact.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">mail</span><span class="font-label-md text-label-md tracking-wide">Contact</span></a>
+</nav>
+<div class="px-6 py-6 border-t border-outline-variant/30">
+<a class="bg-secondary text-on-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="index.html">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>home</span>
+</a>
+</div>
+</aside>
+
+<!-- TopAppBar Mobile -->
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[300px] flex flex-col relative w-full pt-20 md:pt-0">
+<!-- Header Area -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-12 md:pt-24 pb-8 w-full text-center">
+<div class="text-center max-w-2xl mx-auto">
+<header class="text-center mb-24 max-w-3xl mx-auto">
+<div class="inline-flex items-center justify-center gap-4 mb-6">
+<div class="h-px w-12 bg-primary"></div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest">IV</span>
+<div class="h-px w-12 bg-primary"></div>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">Projects</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">An archive of the projects detailing the methodologies and outcomes.</p>
+</section>
+
+
+<!-- Realistic Library Shelf Section -->
+<section class="flex-1 w-full relative px-margin-mobile md:px-margin-desktop pb-16">
+<div class="max-w-container-max mx-auto w-full border-[12px] border-[#2c1a0e] rounded-sm wood-shelf p-8 relative flex flex-col gap-12">
+<!-- Shelf 1 -->
+<div class="relative w-full flex justify-center pb-4 pt-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full relative z-10 items-stretch">
+
+
+    <!-- Project File 1 -->
+<div class="relative w-full max-w-md mx-auto group">
+<div class="transform transition-transform group-hover:-translate-y-2 duration-300 h-full flex flex-col">
+<!-- Folder Tab -->
+<div class="absolute -top-5 left-0 w-32 h-6 bg-surface-container border-t border-l border-r border-outline-variant rounded-t-lg z-0"></div>
+<!-- Folder Body -->
+<article class="bg-surface-container rounded-b-lg rounded-tr-lg shadow-md border border-outline-variant flex flex-col relative z-10 flex-1 min-h-[500px]">
+<div class="p-8 flex-1 flex flex-col border-t border-outline-variant/50 mt-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Hierarchical Optimization Technique for Placement of Visual Landmarks for Robot Navigation in Repetitive Structured Indoor Environments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">A cost-effective, vision-based autonomous indoor navigation system for mobile robots. Designed to solve spatial ambiguity in repetitive environments like hotel corridors, the project utilizes passive ArUco markers as navigation beacons to replace expensive LiDAR systems.</p>
+<div class="mb-6">
+<h4 class="font-label-md text-label-md text-on-surface mb-2 uppercase tracking-wider">Tools Used</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">MATLAB</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Greedy Optimization</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Webots</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">OpenCV</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Jetson Nano Bot</span>
+</div>
+</div>
+<div class="flex gap-4 items-center border-t border-outline-variant pt-4 mt-auto">
+<a class="flex items-center justify-center gap-2 flex-1 bg-tertiary text-on-tertiary py-2 px-4 rounded-sm hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors font-label-md text-label-md shadow-sm" href="project1.html">
+<span>Open</span>
+</a>
+<a class="flex items-center justify-center gap-2 flex-1 border border-tertiary text-tertiary py-2 px-4 rounded-sm hover:bg-tertiary/5 transition-colors font-label-md text-label-md shadow-sm bg-transparent" href="https://github.com/Abinaya-senthil774/indoor-navigation-for-robots">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+
+<!-- Project File 2 -->
+<div class="relative w-full max-w-md mx-auto group">
+<div class="transform transition-transform group-hover:-translate-y-2 duration-300 h-full flex flex-col">
+<!-- Folder Tab -->
+<div class="absolute -top-5 right-0 w-32 h-6 bg-surface-container border-t border-l border-r border-outline-variant rounded-t-lg z-0"></div>
+<!-- Folder Body -->
+<article class="bg-surface-container rounded-b-lg rounded-tl-lg shadow-md border border-outline-variant flex flex-col relative z-10 flex-1 min-h-[500px]">
+<div class="p-8 flex-1 flex flex-col border-t border-outline-variant/50 mt-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Smart Home Security Automation System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">The work provides an automated home security system for interior and exterior monitoring. It utilizes CCTV with computer vision for facial recognition and motion tracking outside. Inside, non-invasive sensors and machine learning models detect intruders, track room occupancy, and identify fire hazards</p>
+<div class="mb-6">
+<h4 class="font-label-md text-label-md text-on-surface mb-2 uppercase tracking-wider">Tools Used</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">OpenCV</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Arduino Mega</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Raspberry Pi</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Isolation Forest</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Data analytics</span>
+</div>
+</div>
+<div class="flex gap-4 items-center border-t border-outline-variant pt-4 mt-auto">
+<a class="flex items-center justify-center gap-2 flex-1 bg-tertiary text-on-tertiary py-2 px-4 rounded-sm hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors font-label-md text-label-md shadow-sm" href="project2.html">
+<span>Open</span>
+</a>
+<a class="flex items-center justify-center gap-2 flex-1 border border-tertiary text-tertiary py-2 px-4 rounded-sm hover:bg-tertiary/5 transition-colors font-label-md text-label-md shadow-sm bg-transparent" href="https://github.com/Abinaya-senthil774/Smart-Home-Security">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+<!-- Shelf Board Base -->
+<div class="absolute bottom-0 left-[-2rem] right-[-2rem] h-6 shelf-board z-0"></div>
+</div>
+<!-- Shelf 2 -->
+<div class="relative w-full flex justify-center pb-4 pt-6 mt-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full relative z-10 items-stretch">
+
+
+<!-- Project File 3 -->
+<div class="relative w-full max-w-md mx-auto group">
+<div class="transform transition-transform group-hover:-translate-y-2 duration-300 h-full flex flex-col">
+<!-- Folder Tab -->
+<div class="absolute -top-5 left-0 w-32 h-6 bg-surface-container border-t border-l border-r border-outline-variant rounded-t-lg z-0"></div>
+<!-- Folder Body -->
+<article class="bg-surface-container rounded-b-lg rounded-tr-lg shadow-md border border-outline-variant flex flex-col relative z-10 flex-1 min-h-[500px]">
+<div class="p-8 flex-1 flex flex-col border-t border-outline-variant/50 mt-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">AI-Driven Precision Farming for Mangoes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">A unified AI-powered system that acts as the "brain" for the entire mango lifecycle, integrating classification, detection, prediction, and grading modules into a central decision support system.</p>
+<div class="mb-6">
+<h4 class="font-label-md text-label-md text-on-surface mb-2 uppercase tracking-wider">Tools Used</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Python</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Streamlit</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Explainable AIs</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">LIME</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">CNN</span>
+</div>
+</div>
+<div class="flex gap-4 items-center border-t border-outline-variant pt-4 mt-auto">
+<a class="flex items-center justify-center gap-2 flex-1 bg-tertiary text-on-tertiary py-2 px-4 rounded-sm hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors font-label-md text-label-md shadow-sm" href="project3.html">
+<span>Open</span>
+</a>
+<a class="flex items-center justify-center gap-2 flex-1 border border-tertiary text-tertiary py-2 px-4 rounded-sm hover:bg-tertiary/5 transition-colors font-label-md text-label-md shadow-sm bg-transparent" href="https://github.com/Abinaya-senthil774/AI-Driven-Precision-Farming-for-Mangoes">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+
+
+<!-- Project File 4 -->
+<div class="relative w-full max-w-md mx-auto group">
+<div class="transform transition-transform group-hover:-translate-y-2 duration-300 h-full flex flex-col">
+<!-- Folder Tab -->
+<div class="absolute -top-5 right-0 w-32 h-6 bg-surface-container border-t border-l border-r border-outline-variant rounded-t-lg z-0"></div>
+<!-- Folder Body -->
+<article class="bg-surface-container rounded-b-lg rounded-tl-lg shadow-md border border-outline-variant flex flex-col relative z-10 flex-1 min-h-[500px]">
+<div class="p-8 flex-1 flex flex-col border-t border-outline-variant/50 mt-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Energy Optimized AGV Path Planning and Fleet Management</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">Energy-aware fleet management and path planning for AGVs in ROS 2, incorporating nonlinear battery drain models, task dispatching, and conflict-free routing.</p>
+<div class="mb-6">
+<h4 class="font-label-md text-label-md text-on-surface mb-2 uppercase tracking-wider">Tools Used</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">ROS2</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Gazebo</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">RVIZ2</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">A* Algorithm</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Python</span>
+</div>
+</div>
+<div class="flex gap-4 items-center border-t border-outline-variant pt-4 mt-auto">
+<a class="flex items-center justify-center gap-2 flex-1 bg-tertiary text-on-tertiary py-2 px-4 rounded-sm hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors font-label-md text-label-md shadow-sm" href="project4.html">
+<span>Open</span>
+</a>
+<a class="flex items-center justify-center gap-2 flex-1 border border-tertiary text-tertiary py-2 px-4 rounded-sm hover:bg-tertiary/5 transition-colors font-label-md text-label-md shadow-sm bg-transparent" href="https://github.com/Abinaya-senthil774/AGV-Energy-Path-Planner">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+<!-- Shelf Board Base -->
+<div class="absolute bottom-0 left-[-2rem] right-[-2rem] h-6 shelf-board z-0"></div>
+</div>
+<!-- Shelf 3 -->
+<div class="relative w-full flex justify-center pb-4 pt-6 mt-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full relative z-10 items-stretch">
+
+
+    <!-- Project File 5 -->
+<div class="relative w-full max-w-md mx-auto group">
+<div class="transform transition-transform group-hover:-translate-y-2 duration-300 h-full flex flex-col">
+<!-- Folder Tab -->
+<div class="absolute -top-5 left-0 w-32 h-6 bg-surface-container border-t border-l border-r border-outline-variant rounded-t-lg z-0"></div>
+<!-- Folder Body -->
+<article class="bg-surface-container rounded-b-lg rounded-tr-lg shadow-md border border-outline-variant flex flex-col relative z-10 flex-1 min-h-[500px]">
+<div class="p-8 flex-1 flex flex-col border-t border-outline-variant/50 mt-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Detection of Red-Palm Weevil Infestation in Coconut Trees Using Neural Network Systems</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">Real-time acoustic detection of red palm weevil larvae in coconut trees using neural networks.</p>
+<div class="mb-6">
+<h4 class="font-label-md text-label-md text-on-surface mb-2 uppercase tracking-wider">Tools Used</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">PyTorch</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">MFCC</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">SMOTE</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Signal Processing</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 font-label-md text-label-md rounded-sm border border-outline-variant">Neural Networks</span>
+</div>
+</div>
+<div class="flex gap-4 items-center border-t border-outline-variant pt-4 mt-auto">
+<a class="flex items-center justify-center gap-2 flex-1 bg-tertiary text-on-tertiary py-2 px-4 rounded-sm hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors font-label-md text-label-md shadow-sm" href="project5.html">
+<span>Open</span>
+</a>
+<a class="flex items-center justify-center gap-2 flex-1 border border-tertiary text-tertiary py-2 px-4 rounded-sm hover:bg-tertiary/5 transition-colors font-label-md text-label-md shadow-sm bg-transparent" href="https://github.com/Abinaya-senthil774/Detection-of-Red-Palm-Weevil-Infestation-in-Coconut-Trees">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Shelf Board Base -->
+<div class="absolute bottom-0 left-[-2rem] right-[-2rem] h-6 shelf-board z-0"></div>
+</div>
+</div>
+</section>
+
+
+<!-- Footer -->
+<div class="fixed bottom-4 right-4 bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full shadow-lg z-50 flex gap-4">
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
+</div>
+</main>
+<script src="site.js"></script>
+</body></html>

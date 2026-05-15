@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abinaya-Robotics Engineering</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="tailwind-config.js"></script>
+<style>
+        .texture-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .torn-edge-top {
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='1200' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L0 0 Q 10 10 20 0 T 40 0 T 60 0 T 80 0 T 100 0 T 120 0 T 140 0 T 160 0 T 180 0 T 200 0 T 220 0 T 240 0 T 260 0 T 280 0 T 300 0 T 320 0 T 340 0 T 360 0 T 380 0 T 400 0 T 420 0 T 440 0 T 460 0 T 480 0 T 500 0 T 520 0 T 540 0 T 560 0 T 580 0 T 600 0 T 620 0 T 640 0 T 660 0 T 680 0 T 700 0 T 720 0 T 740 0 T 760 0 T 780 0 T 800 0 T 820 0 T 840 0 T 860 0 T 880 0 T 900 0 T 920 0 T 940 0 T 960 0 T 980 0 T 1000 0 T 1020 0 T 1040 0 T 1060 0 T 1080 0 T 1100 0 T 1120 0 T 1140 0 T 1160 0 T 1180 0 T 1200 0 L 1200 20 Z' fill='black'/%3E%3C/svg%3E");
+            mask-image: url("data:image/svg+xml,%3Csvg width='1200' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L0 0 Q 10 10 20 0 T 40 0 T 60 0 T 80 0 T 100 0 T 120 0 T 140 0 T 160 0 T 180 0 T 200 0 T 220 0 T 240 0 T 260 0 T 280 0 T 300 0 T 320 0 T 340 0 T 360 0 T 380 0 T 400 0 T 420 0 T 440 0 T 460 0 T 480 0 T 500 0 T 520 0 T 540 0 T 560 0 T 580 0 T 600 0 T 620 0 T 640 0 T 660 0 T 680 0 T 700 0 T 720 0 T 740 0 T 760 0 T 780 0 T 800 0 T 820 0 T 840 0 T 860 0 T 880 0 T 900 0 T 920 0 T 940 0 T 960 0 T 980 0 T 1000 0 T 1020 0 T 1040 0 T 1060 0 T 1080 0 T 1100 0 T 1120 0 T 1140 0 T 1160 0 T 1180 0 T 1200 0 L 1200 20 Z' fill='black'/%3E%3C/svg%3E");
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+    </style>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md texture-bg selection:bg-primary-container selection:text-on-primary-container">
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-40 bg-surface-container-low border-b border-outline-variant/30 fixed top-0 left-0 right-0">
+<h1 class="font-headline-xl text-headline-xl text-primary-container">Abinaya's Portfolio</h1>
+<button class="text-primary hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden'); document.getElementById('mobile-sidebar').classList.toggle('flex');">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[300px] z-50 bg-surface-container-low shadow-md hidden md:flex flex-col py-base" id="mobile-sidebar">
+<!-- Mobile Close Button -->
+<div class="md:hidden flex justify-end px-6 py-3">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.add('hidden'); document.getElementById('mobile-sidebar').classList.remove('flex');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 py-8 flex flex-col items-center border-b border-outline-variant/30">
+<div class="w-24 h-24 rounded-2xl bg-primary-container flex items-center justify-center mb-4 overflow-hidden outline outline-2 outline-offset-4 outline-outline-variant">
+<img alt="Curator Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKVNYNwP9hULdehZG4z6EdydUOGCJus76-RIhN50hOQUCdhgKyVti8AUVzUtK6qkD4yBW8Fmvi58ZYgmu5bYUDcfHDQiSJB34ghfnLBpTgT-IF4yaVCutOtf7G7H99K9-7-vC_X6Qoo50kmCYDLmj1QpJ5jiyksMNADq-wbIU9R4yS94aSrDsh7FHbRVOSfNrm7K8D_5zsVkCN0b_UClOFc2T9OP7ku0i9bHgEptLTLiRWOA_81Z07-bVegatpPgKqppz8ag4VbQ"/>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container text-center leading-tight mb-2">Abinaya's Portfolio</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Automation & Robotics Engineer</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="index.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">home</span><span class="font-label-md text-label-md tracking-wide">Home</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="about_me.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">person</span><span class="font-label-md text-label-md tracking-wide">About Me</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="skills.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">psychology</span><span class="font-label-md text-label-md tracking-wide">Skills</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="projects.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">work</span><span class="font-label-md text-label-md tracking-wide">Projects</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="resume.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">description</span><span class="font-label-md text-label-md tracking-wide">Resume</span></a>
+<a class="flex items-center gap-4 text-primary font-semibold mx-3 px-4 py-4 rounded-xl border-l-4 border-primary bg-surface-container-highest/60" href="contact.html"><span class="material-symbols-outlined text-[22px]" style='font-variation-settings: "FILL" 1;'>mail</span><span class="font-label-md text-label-md tracking-wide">Contact</span></a>
+</nav>
+<div class="px-6 py-6 border-t border-outline-variant/30">
+<a class="bg-secondary text-on-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="index.html">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>home</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar (Mobile) -->
+
+<!-- Main Content Area -->
+<!-- Main Content Area -->
+<main class="md:ml-[300px] pt-24 md:pt-16 pb-24 px-margin-mobile md:px-margin-desktop max-w-[calc(100vw)] md:max-w-[calc(100vw-300px)] min-h-[calc(100vh-100px)] flex flex-col justify-center items-center">
+    
+    <div class="max-w-3xl w-full text-center mb-16">
+        <h1 class="text-headline-xl font-headline-xl text-on-surface mb-6 relative inline-block">
+            Contact Directory
+            <div class="absolute -bottom-2 left-1/4 right-1/4 h-px bg-primary opacity-30"></div>
+        </h1>
+        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            I welcome thoughtful conversations regarding collaborative projects, and research opportunities.
+        </p>
+    </div>
+
+    <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Index Card 1: Direct Contact & Form -->
+        <div class="bg-surface-container-lowest border border-outline-variant p-8 relative overflow-hidden shadow-[0_4px_20px_rgba(79,64,40,0.08)] group hover:-translate-y-1 transition-transform duration-500">
+            <div class="absolute top-0 left-0 w-full h-1 bg-primary-container"></div>
+            <div class="absolute right-4 top-4 text-outline-variant opacity-30 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-[32px]">drafts</span>
+            </div>
+            <h3 class="text-headline-lg-mobile font-headline-lg-mobile text-primary mb-8 border-b border-outline-variant pb-2 inline-block">Direct Line</h3>
+            
+            <div class="space-y-8">
+                <!-- Direct Mail Link -->
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-tertiary mt-1">mail</span>
+                    <div class="w-full">
+                        <p class="text-label-md font-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Electronic Mail</p>
+                        <a class="text-body-lg font-body-lg text-on-surface hover:text-tertiary transition-colors decoration-1 underline-offset-4 hover:underline break-all" href="mailto:abinayasenthil774@gmail.com">abinayasenthil774@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Web3Forms Contact Form -->
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-tertiary mt-1">send</span>
+                    <div class="w-full">
+                        <p class="text-label-md font-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Send a Message</p>
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                            
+                            <!-- REQUIRED: Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="27e3ac16-731b-4fc9-b443-40d0c7aef7c2">
+
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <div>
+                                <label for="name" class="sr-only">Name*</label>
+                                <input type="text" id="name" name="name" placeholder="Name*" required 
+                                       class="w-full bg-surface-container border border-outline-variant text-on-surface px-4 py-2 focus:outline-none focus:border-primary transition-colors placeholder:text-on-surface-variant/50">
+                            </div>
+
+                            <!-- Email validation is handled automatically by type="email" -->
+                            <div>
+                                <label for="email" class="sr-only">Email*</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email Address*" required 
+                                       class="w-full bg-surface-container border border-outline-variant text-on-surface px-4 py-2 focus:outline-none focus:border-primary transition-colors placeholder:text-on-surface-variant/50 invalid:border-error invalid:text-error focus:invalid:border-error">
+                            </div>
+
+                            <div>
+                                <label for="subject" class="sr-only">Subject*</label>
+                                <input type="text" id="subject" name="subject" placeholder="Subject*" required 
+                                       class="w-full bg-surface-container border border-outline-variant text-on-surface px-4 py-2 focus:outline-none focus:border-primary transition-colors placeholder:text-on-surface-variant/50">
+                            </div>
+
+                            <div>
+                                <label for="query" class="sr-only">Query*</label>
+                                <textarea id="query" name="query" placeholder="Query*" rows="3" required 
+                                          class="w-full bg-surface-container border border-outline-variant text-on-surface px-4 py-2 focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-on-surface-variant/50"></textarea>
+                            </div>
+
+                            <button type="submit" class="bg-primary text-on-primary px-6 py-2 hover:bg-primary/90 transition-colors font-label-md w-full sm:w-auto">
+                                Send Mail
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Index Card 2: Location & Network -->
+        <div class="bg-surface-container-lowest border border-outline-variant p-8 relative overflow-hidden shadow-[0_4px_20px_rgba(79,64,40,0.08)] group hover:-translate-y-1 transition-transform duration-500">
+            <div class="absolute top-0 left-0 w-full h-1 bg-secondary-container"></div>
+            <div class="absolute right-4 top-4 text-outline-variant opacity-30 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-[32px]">public</span>
+            </div>
+            <h3 class="text-headline-lg-mobile font-headline-lg-mobile text-secondary mb-8 border-b border-outline-variant pb-2 inline-block">Location &amp; Network</h3>
+            
+            <div class="space-y-8">
+                
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-secondary mt-1">location_on</span>
+                    <div>
+                        <p class="text-body-lg font-body-lg text-on-surface">Tamil Nadu,<br/>India</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-secondary mt-1">link</span>
+                    <div class="w-full">
+                        <p class="text-label-md font-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Professional Nodes</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a class="px-4 py-2 bg-surface-container hover:bg-surface-variant text-on-surface text-label-md font-label-md border border-outline-variant hover:border-outline transition-colors flex items-center gap-2" href="https://www.linkedin.com/in/abinayasenthilnath/" target="_blank" rel="noopener noreferrer">
+                                LinkedIn
+                            </a>
+                            <a class="px-4 py-2 bg-surface-container hover:bg-surface-variant text-on-surface text-label-md font-label-md border border-outline-variant hover:border-outline transition-colors flex items-center gap-2" href="https://github.com/Abinaya-senthil774" target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</main>
+
+<!-- Footer -->
+<div class="fixed bottom-4 right-4 bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full shadow-lg z-50 flex gap-4">
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
+    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
+</div>
+</main>
+
+<script src="site.js"></script>
+</body></html>

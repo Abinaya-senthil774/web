@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abinaya-Robotics Engineering</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"/>
+<script src="tailwind-config.js"></script>
+<style>
+        .book-shadow {
+            box-shadow: 
+                0 20px 40px rgba(79, 64, 40, 0.15),
+                0 4px 12px rgba(79, 64, 40, 0.08),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+        .page-fold-left {
+            background: linear-gradient(to right, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 90%, rgba(0,0,0,0.15) 100%);
+        }
+        .page-fold-right {
+            background: linear-gradient(to left, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 90%, rgba(0,0,0,0.15) 100%);
+        }
+        .spine-shadow {
+            box-shadow: inset 20px 0 30px -15px rgba(0,0,0,0.1);
+        }
+    </style>
+<link rel="stylesheet" href="site.css"/>
+</head>
+
+<body class="bg-surface-variant min-h-screen text-on-surface font-body-md bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] bg-opacity-20 flex flex-col p-4 md:p-12 relative items-center justify-center">
+    <main class="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row relative h-auto z-10">
+        
+        <div class="absolute inset-[-8px] md:inset-[-12px] bg-secondary rounded-lg shadow-[0_30px_60px_rgba(53,16,0,0.2)] z-0"></div>
+        
+        <div class="w-full md:w-1/2 bg-surface-container-lowest relative z-10 book-shadow rounded-l-md overflow-hidden flex flex-col">
+            <div class="absolute inset-0 page-fold-left pointer-events-none z-20"></div>
+            <div class="p-8 md:p-16 overflow-y-auto flex flex-col relative z-10">
+                
+                <div class="text-outline font-label-md mb-8">Pg. 01</div>
+                
+                <div class="mb-8">
+                    <h2 class="font-label-md text-secondary tracking-[0.1em] uppercase mb-4">Project Overview</h2>
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface mb-6 relative inline-block leading-tight">
+                        AI-Driven Precision Farming for Mangoes
+                        <div class="absolute -bottom-4 left-0 w-1/3 h-px bg-primary opacity-30"></div>
+                    </h1>
+                </div>
+
+                <div class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed space-y-4">
+                    <p>
+                        <strong class="text-on-surface">Problem:</strong> Traditional mango farming relies heavily on manual crop inspection, which is time-consuming, prone to errors, and inevitably leads to yield losses and resource wastage.
+                    </p>
+                    <p>
+                        <strong class="text-on-surface">Scope:</strong> The project delivers a unified, AI-driven precision agriculture software system that automates the entire mango cultivation life cycle. It encompasses mango variety classification, disease detection, non-destructive ripeness prediction, and fruit grading according to UN/ECE standards.
+                    </p>
+                </div>
+
+                <div class="mb-10 relative group">
+                    <div class="absolute -inset-2 bg-surface-container-low rounded transform rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
+                    <img alt="AI Agriculture Mango Visualization" class="w-full h-auto aspect-video object-cover rounded shadow-md relative z-10 sepia-[0.2] grayscale-[0.3]" src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"/>
+                </div>
+
+                <div class="mt-auto">
+                    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 italic text-[24px]">Technical Stack</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 text-sm font-label-md rounded-sm border-l-2 border-secondary shadow-sm relative after:content-[''] after:absolute after:-right-2 after:top-1/2 after:-translate-y-1/2 after:border-t-[14px] after:border-t-transparent after:border-b-[14px] after:border-b-transparent after:border-l-[8px] after:border-l-secondary-fixed">RepVGG-A1</span>
+                        <span class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 text-sm font-label-md rounded-sm border-l-2 border-secondary shadow-sm relative after:content-[''] after:absolute after:-right-2 after:top-1/2 after:-translate-y-1/2 after:border-t-[14px] after:border-t-transparent after:border-b-[14px] after:border-b-transparent after:border-l-[8px] after:border-l-secondary-fixed">ConvNeXt-Tiny</span>
+                        <span class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 text-sm font-label-md rounded-sm border-l-2 border-secondary shadow-sm relative after:content-[''] after:absolute after:-right-2 after:top-1/2 after:-translate-y-1/2 after:border-t-[14px] after:border-t-transparent after:border-b-[14px] after:border-b-transparent after:border-l-[8px] after:border-l-secondary-fixed">CatBoost & SHAP</span>
+                        <span class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 text-sm font-label-md rounded-sm border-l-2 border-secondary shadow-sm relative after:content-[''] after:absolute after:-right-2 after:top-1/2 after:-translate-y-1/2 after:border-t-[14px] after:border-t-transparent after:border-b-[14px] after:border-b-transparent after:border-l-[8px] after:border-l-secondary-fixed">CoaT Transformer</span>
+                        <span class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 text-sm font-label-md rounded-sm border-l-2 border-secondary shadow-sm relative after:content-[''] after:absolute after:-right-2 after:top-1/2 after:-translate-y-1/2 after:border-t-[14px] after:border-t-transparent after:border-b-[14px] after:border-b-transparent after:border-l-[8px] after:border-l-secondary-fixed">Streamlit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hidden md:block w-4 h-full bg-gradient-to-r from-[rgba(0,0,0,0.15)] via-[rgba(0,0,0,0.3)] to-[rgba(0,0,0,0.15)] z-20 relative">
+            <div class="absolute top-0 bottom-0 left-1/2 w-[1px] bg-[rgba(255,255,255,0.2)]"></div>
+        </div>
+        
+        <div class="w-full md:w-1/2 bg-surface-container-lowest relative z-10 book-shadow rounded-r-md overflow-hidden flex flex-col spine-shadow mt-4 md:mt-0">
+            <div class="absolute inset-0 page-fold-right pointer-events-none z-20"></div>
+            <div class="p-8 md:p-16 md:pl-20 overflow-y-auto flex flex-col relative z-10">
+                
+                <div class="text-outline font-label-md mb-8 text-right">Pg. 02</div>
+                
+                <div class="prose prose-stone max-w-none font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    
+                    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Methodology</h3>
+                    <p class="mb-4 first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-2 first-letter:mt-1">
+                        The project systematically replaces manual guesswork with automated, explainable machine learning models designed to optimize evaluation metrics across all agricultural stages.
+                    </p>
+
+                    <h4 class="font-label-md text-label-md text-secondary tracking-widest uppercase mb-4 mt-6">Pipeline Stages</h4>
+                    <ul class="list-none pl-0 space-y-4 mb-6 border-l-2 border-primary-container pl-6 py-2">
+                        <li><strong class="text-on-surface">Robust Preprocessing:</strong> Applies HSV color masking, grayscale edge detection, circularity filters, and Hough Transforms to isolate fruit and eliminate outdoor background noise.</li>
+                        <li><strong class="text-on-surface">Variety Classification:</strong> Uses the RepVGG-A1 CNN, selected for its structural re-parametrization, offering high efficiency for real-time deployment.</li>
+                        <li><strong class="text-on-surface">Disease Detection:</strong> ConvNeXt-Tiny paired with Layer-CAM identifies leaf diseases and generates compact, highly accurate visual heatmaps with exceptional computational runtime.</li>
+                        <li><strong class="text-on-surface">Ripeness Prediction:</strong> A CatBoost regression model (paired with SHAP) predicts internal chemical attributes (sweetness/acidity) non-destructively using external tabular data like days after flowering and RGB values.</li>
+                        <li><strong class="text-on-surface">Fruit Grading:</strong> A hybrid CoaT-Lite Small Transformer + Random Forest + LIME model categorizes fruits into UN/ECE grades by fusing advanced semantic features with low-level texture details.</li>
+                    </ul>
+
+                    <div class="w-full h-px bg-outline-variant my-10 relative">
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container-lowest px-4">
+                            <span class="material-symbols-outlined text-outline text-xl">eco</span>
+                        </div>
+                    </div>
+
+                    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Outcomes & Results</h3>
+                    <p class="mb-6">The integrated system proved highly effective across all modules when evaluated against baselines and alternative algorithms:</p>
+                    
+                    <ul class="list-none pl-0 space-y-4 mb-8 border-l-2 border-primary-container pl-6 py-2">
+                        <li><strong class="text-on-surface text-primary">Classification Efficiency:</strong> RepVGG-A1 achieved a peak accuracy of <strong>99.3%</strong>, matching heavier models while remaining lightweight.</li>
+                        <li><strong class="text-on-surface text-primary">Superior Disease Localization:</strong> Layer-CAM vastly outperformed Grad-CAM and Eigen-CAM, achieving an average Intersection over Union (IoU) overlap of <strong>0.93</strong> and a runtime of <strong>0.24 seconds</strong>.</li>
+                        <li><strong class="text-on-surface text-primary">Robust Ripeness Accuracy:</strong> CatBoost proved the most reliable for maturity prediction, achieving the highest R<sup>2</sup> score (<strong>0.7482</strong> for Total Soluble Solids) and the lowest Mean Absolute Error.</li>
+                        <li><strong class="text-on-surface text-primary">Grading Reliability:</strong> The grading model achieved an <strong>89% validation accuracy</strong> and a Cohen's Kappa score of 0.794.</li>
+                        <li><strong class="text-on-surface text-primary">Accessible Deployment:</strong> Successfully unified all capabilities into a transparent, single Streamlit web application providing farmers with a personalized decision-support dashboard.</li>
+                    </ul>
+
+                    <div class="flex justify-center mt-12 mb-4">
+                        <span class="text-primary-container text-2xl">❧</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <nav class="w-full max-w-[1400px] mx-auto mt-12 flex justify-between items-center relative z-20 px-4 md:px-0">
+        
+        <a href="projects.html" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-widest group bg-surface-container-lowest px-6 py-3 rounded-md shadow-md hover:shadow-lg border border-outline-variant/30">
+            <span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">arrow_upward</span>
+            <span class="hidden md:inline">Back to Shelf</span>
+            <span class="md:hidden">Shelf</span>
+        </a>
+
+        <a href="index.html" class="bg-secondary text-on-secondary w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg border-2 border-secondary-container hover:bg-secondary-container hover:text-on-secondary-container hover:-translate-y-1 transition-all duration-300" aria-label="Return to Home">
+            <span class="material-symbols-outlined text-3xl" style='font-variation-settings: "FILL" 1;'>home</span>
+        </a>
+
+        <div class="flex items-center gap-2 md:gap-4">
+            
+            <a id="btn-prev-project" href="project-2.html" class="flex items-center gap-2 md:gap-3 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-widest group bg-surface-container-lowest px-4 md:px-6 py-3 rounded-md shadow-md hover:shadow-lg border border-outline-variant/30">
+                <span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_left_alt</span>
+                <span class="hidden md:inline">Prev Project</span>
+                <span class="md:hidden">Prev</span>
+            </a>
+
+            <a id="btn-next-project" href="project-4.html" class="flex items-center gap-2 md:gap-3 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-widest group bg-surface-container-lowest px-4 md:px-6 py-3 rounded-md shadow-md hover:shadow-lg border border-outline-variant/30">
+                <span class="hidden md:inline">Next Project</span>
+                <span class="md:hidden">Next</span>
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+            </a>
+            
+        </div>
+    </nav>
+
+<script src="site.js"></script>
+</body>
+</html>
