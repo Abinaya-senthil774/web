@@ -334,7 +334,6 @@ const PROJECT_SEQUENCE = [
   "project3.html",
   "project4.html",
   "project5.html",
-  "project6.html"
 ];
 
 function setupDynamicProjectNav() {
