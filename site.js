@@ -90,7 +90,7 @@ function setupPageTransitions() {
 function setupProfileFloat() {
   // Target the large hero profile image (first big rounded image in main)
   const heroImg = document.querySelector("main article img, main section img");
-  if (heroImg) {
+  if (heroImg && !heroImg.closest("#certGallery, .cert-gallery")){
     heroImg.closest("div")?.classList.add("profile-float");
   }
 }

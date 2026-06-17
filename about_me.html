@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -17,10 +16,146 @@
 .torn-edge-bottom {
     mask-image: url("data:image/svg+xml;utf8,<svg preserveAspectRatio=\"none\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,0 L100,0 L100,95 Q95,100 90,95 Q85,90 80,95 Q75,100 70,95 Q65,90 60,95 Q55,100 50,95 Q45,90 40,95 Q35,100 30,95 Q25,90 20,95 Q15,100 10,95 Q5,90 0,95 Z\" fill=\"black\"/></svg>");
     mask-size: 100% 100%
-    }</style>
+    }
+
+/* ── Sticky Notes ── */
+.sticky-board {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .sticky-board { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.sticky-note {
+    position: relative;
+    padding: 2rem 1.5rem 1.5rem;
+    min-height: 240px;
+    box-shadow:
+        0 10px 20px -8px rgba(0,0,0,0.14),
+        0 14px 18px -10px rgba(0,0,0,0.09),
+        inset 0 -10px 20px rgba(0,0,0,0.025);
+    border-radius: 2px;
+    font-family: 'Newsreader', serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sticky-note:hover {
+    transform: translateY(-6px) rotate(0deg) !important;
+    box-shadow:
+        0 20px 32px -8px rgba(0,0,0,0.18),
+        0 16px 20px -12px rgba(0,0,0,0.12);
+    z-index: 10;
+}
+.note-cream { background-color: #c4b88a; border-left: 1px solid rgba(0,0,0,0.03); }
+.note-cream .sticky-title { color: #1a2530 !important; }
+.note-cream .sticky-desc  { color: #475569 !important; }
+.note-cream .sticky-meta  { color: #64748B !important; border-top: 1px solid rgba(0,0,0,0.06); }
+
+.note-teal { background-color: #80b4c1; border-left: 1px solid rgba(255,255,255,0.05); }
+.note-teal .sticky-title { color: #FAF9F5 !important; }
+.note-teal .sticky-desc  { color: rgba(250,249,245,0.85) !important; }
+.note-teal .sticky-meta  { color: rgba(250,249,245,0.7) !important; border-top: 1px solid rgba(255,255,255,0.15); }
+
+.note-gold { background-color: #dcbd8c; border-left: 1px solid rgba(0,0,0,0.03); }
+.note-gold .sticky-title { color: #231C10 !important; }
+.note-gold .sticky-desc  { color: rgba(35,28,16,0.85) !important; }
+.note-gold .sticky-meta  { color: rgba(35,28,16,0.7) !important; border-top: 1px solid rgba(0,0,0,0.08); }
+
+.push-pin {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    z-index: 20;
+    box-shadow:
+        0 5px 7px rgba(0,0,0,0.22),
+        inset -2px -2px 4px rgba(0,0,0,0.3),
+        inset 2px 2px 4px rgba(255,255,255,0.55);
+}
+.push-pin::after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%) rotate(15deg);
+    width: 1.5px;
+    height: 11px;
+    background: rgba(0,0,0,0.35);
+    filter: blur(0.5px);
+    z-index: -1;
+}
+.pin-cream { background: #FAF9F5; border: 1px solid #e3e1da; }
+.pin-teal  { background: #00637C; border: 1px solid #004b5e; }
+.pin-gold  { background: #C89D59; border: 1px solid #a67f42; }
+
+/* ── Desk Tray / Toolkit ── */
+.desk-tray {
+    background: #f1ede4;
+    border: 12px solid #e1dacb;
+    border-radius: 18px;
+    box-shadow:
+        0 16px 32px -12px rgba(0,0,0,0.07),
+        inset 0 8px 16px rgba(0,0,0,0.035);
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.1rem;
+}
+@media (min-width: 768px) {
+    .desk-tray { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.tray-slot {
+    background: #FAF8F5;
+    border-radius: 9px;
+    padding: 1.2rem 1.4rem;
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.02),
+        inset 0 3px 7px rgba(0,0,0,0.035);
+    border: 1px solid rgba(0,0,0,0.025);
+    transition: box-shadow 0.3s ease;
+}
+.tray-slot:hover {
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.04),
+        inset 0 2px 4px rgba(0,0,0,0.018);
+}
+
+/* ── Section divider ── */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 3rem;   /* was h-24 = 6rem */
+    margin-bottom: 2.5rem; /* was mb-32 = 8rem */
+}
+.section-divider::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--tw-color-outline-variant, #d4cfc8);
+}
+.section-divider-dots {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    gap: 0.5rem;
+    background: var(--surface, #fff);
+    padding: 0 1rem;
+}
+</style>
 <link rel="stylesheet" href="site.css"/>
 </head>
+
 <body class="bg-surface text-on-background font-body-md text-body-md min-h-screen flex antialiased">
+
 <!-- Mobile Header -->
 <header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-40 bg-surface-container-low border-b border-outline-variant/30 fixed top-0 left-0 right-0">
 <h1 class="font-headline-xl text-headline-xl text-primary-container">Abinaya's Portfolio</h1>
@@ -28,9 +163,9 @@
 <span class="material-symbols-outlined">menu</span>
 </button>
 </header>
-<!-- SideNavBar (Shared Component) -->
+
+<!-- SideNavBar -->
 <aside class="fixed left-0 top-0 h-full w-[300px] z-50 bg-surface-container-low shadow-md hidden md:flex flex-col py-base" id="mobile-sidebar">
-<!-- Mobile Close Button -->
 <div class="md:hidden flex justify-end px-6 py-3">
 <button class="text-on-surface-variant hover:opacity-80 transition-opacity" onclick="document.getElementById('mobile-sidebar').classList.add('hidden'); document.getElementById('mobile-sidebar').classList.remove('flex');">
 <span class="material-symbols-outlined">close</span>
@@ -41,12 +176,12 @@
 <img alt="Curator Portrait" class="w-full h-full object-cover" src="assets/img2.jpg"/>
 </div>
 <h1 class="font-headline-xl text-headline-xl text-primary-container text-center leading-tight mb-2">Abinaya's Portfolio</h1>
-<p class="font-body-md text-body-md text-on-surface-variant text-center">Automation & Robotics Engineer</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Automation &amp; Robotics Engineer</p>
 </div>
 <nav class="flex-1 overflow-y-auto py-6 space-y-1">
 <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="index.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">home</span><span class="font-label-md text-label-md tracking-wide">Home</span></a>
 <a class="flex items-center gap-4 text-primary font-semibold mx-3 px-4 py-4 rounded-xl border-l-4 border-primary bg-surface-container-highest/60" href="about_me.html"><span class="material-symbols-outlined text-[22px]" style='font-variation-settings: "FILL" 1;'>person</span><span class="font-label-md text-label-md tracking-wide">About Me</span></a>
-<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="skills.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">psychology</span><span class="font-label-md text-label-md tracking-wide">Skills & Certifications</span></a>
+<a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="skills.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">psychology</span><span class="font-label-md text-label-md tracking-wide">Skills &amp; Certifications</span></a>
 <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="projects.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">work</span><span class="font-label-md text-label-md tracking-wide">Projects</span></a>
 <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="resume.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">description</span><span class="font-label-md text-label-md tracking-wide">Resume</span></a>
 <a class="flex items-center gap-4 text-on-surface-variant mx-3 px-4 py-4 rounded-xl hover:bg-surface-container-highest hover:text-on-surface transition-all duration-200 group" href="contact.html"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform duration-200">mail</span><span class="font-label-md text-label-md tracking-wide">Contact</span></a>
@@ -57,206 +192,322 @@
 </a>
 </div>
 </aside>
-<!-- Main Content Area -->
+
+<!-- Main Content -->
 <main class="flex-1 md:ml-[300px] min-h-screen pt-20 md:pt-0">
-<!-- Canvas Container -->
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
-<!-- Journal Entry Header -->
-<header class="text-center mb-24 max-w-3xl mx-auto">
-<div class="inline-flex items-center justify-center gap-4 mb-6">
-<div class="h-px w-12 bg-primary"></div>
-<span class="font-label-md text-label-md text-primary uppercase tracking-widest">II</span>
-<div class="h-px w-12 bg-primary"></div>
-</div>
-<h1 class="font-headline-xl text-headline-xl text-on-surface mb-8">About Me</h1>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-14">
 
-</header>
-<!-- Section 1: The Curator -->
-<section class="mb-32 relative">
-<div class="absolute -left-12 top-0 bottom-0 w-px bg-outline-variant/50 hidden lg:block"></div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-5 order-2 lg:order-1">
-<div class="relative p-2 bg-surface-container-lowest border border-outline-variant shadow-md rounded-sm transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-<img class="w-full h-auto object-cover grayscale sepia-[0.3]" data-alt="A softly lit, intimate portrait shot of an antique writing desk. The scene features a vintage typewriter, scattered handwritten notes on heavy textured paper, a fountain pen resting near an open leather-bound journal, and a small stack of classic literature. The lighting is warm and directional, suggesting late afternoon sun filtering through a nearby window. The color palette emphasizes rich sepias, warm grays, and muted earth tones, perfectly aligning with an academic, tactile, and nostalgic aesthetic." src="assets/img3.jpeg"/>
-
-</div>
-</div>
-<div class="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 space-y-6">
-<h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary opacity-70">history_edu</span>
-                            My Journey and Focus
-                        </h2>
-<div class="space-y-4 text-on-surface-variant columns-1 md:columns-2 gap-8 text-justify">
-<p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1">
-                                I am currently pursuing my Master's in Artificial Intelligence, building upon the strong hardware and automation foundation I developed during my B.Tech in Automation and Robotics at Amrita Vishwa Vidyapeetham.  
-                            </p>
-<p>                             My fascination with how machines perceive their environment drove me to specialize in computer vision in robotics, machine learning, and deep learning.
-
-                            </p>                    
-<p>
-                                A robot is just metal, wires, an empty shell of steel and circuits; it moves, but it cannot understand. AI becomes the intelligence within the system, giving the machine the ability to learn, adapt, and make decisions. That’s where ordinary machines evolve into intelligent robots. 
-                            </p>
-<p>                             My passion lies in that exact intersection, where ordinary hardware evolves into intelligent, autonomous systems and I am currently transitioning into an AI and Data Science role with a hyper-focus on Intelligent Robotics.
-                            </p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Section 2: The Curator -->
-
-<section class="mb-32 relative">
-    <div class="absolute -left-12 top-0 bottom-0 w-px bg-outline-variant/50 hidden lg:block"></div>
-    
-    <div class="w-full space-y-6">
-        <h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
-            <span class="material-symbols-outlined text-secondary opacity-70">history_edu</span>
-            Working on
-        </h2>
-        
-        <div class="space-y-6 text-on-surface-variant text-left text-lg md:text-xl">
-            <p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 leading-relaxed">
-                <li>Developing algorithms for the optimal placement of ArUco Tags in complex indoor environments, validated across MATLAB, Webots, and hardware setups</li>
-            </p>
-            <p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 leading-relaxed">
-                <li>Working on Design, Kinematic Analysis, and Control of a Modular Delta-Based Parallel Robot.</li>
-            </p>
-            <p class="leading-relaxed">
-                <li>Exploring the intersection of memory and visual data through a personal composite artwork project, bridging childhood and present-day likenesses.</li>
-            </p>
+    <!-- Header — reduced bottom margin from mb-24 to mb-12 -->
+    <header class="text-center mb-12 max-w-3xl mx-auto">
+        <div class="inline-flex items-center justify-center gap-4 mb-4">
+            <div class="h-px w-12 bg-primary"></div>
+            <span class="font-label-md text-label-md text-primary uppercase tracking-widest">II</span>
+            <div class="h-px w-12 bg-primary"></div>
         </div>
-    </div>
-</section>
+        <h1 class="font-headline-xl text-headline-xl text-on-surface">About Me</h1>
+    </header>
 
-<!-- Section 2: The Mission -->
-<section class="mb-32 max-w-4xl mx-auto text-center">
-<span class="material-symbols-outlined text-4xl text-secondary mb-6 block">auto_awesome</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">My Toolkit</h2>
-<div class="bg-surface-container-low p-10 md:p-16 rounded-xl border border-outline-variant shadow-[inset_0_2px_10px_rgba(79,64,40,0.05)] relative overflow-hidden">
-<!-- Subtle corner adornments -->
-<div class="absolute top-4 left-4 w-4 h-4 border-t border-l border-primary/30"></div>
-<div class="absolute top-4 right-4 w-4 h-4 border-t border-r border-primary/30"></div>
-<div class="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-primary/30"></div>
-<div class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary/30"></div>
-
-    <ul class="inline-block text-left list-disc list-inside space-y-3 text-lg md:text-xl text-on-surface-variant not-italic">
-        <li><strong>Languages:</strong> Python, C++</li>
-        <li><strong>AI/ML & Vision:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
-        <li><strong>Robotics & Simulation:</strong> ROS2, Gazebo, Webots</li>
-        <li><strong>Hardware & IoT:</strong> Arduino Mega 2560, Raspberry Pi, ESP32</li>
-    </ul>
-</div>
-</section>
-<!-- Decorative Divider -->
-<div class="w-full h-24 mb-32 relative flex items-center justify-center">
-<div class="absolute w-full h-px bg-outline-variant"></div>
-<div class="bg-surface px-4 z-10 flex gap-2">
-<span class="w-2 h-2 rounded-full bg-primary/40"></span>
-<span class="w-2 h-2 rounded-full bg-primary/60"></span>
-<span class="w-2 h-2 rounded-full bg-primary/40"></span>
-</div>
-</div>
-
-<!-- Section 3: The Journey (Timeline) -->
-<section class="mb-24 max-w-3xl mx-auto">
-    <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Beyond the Code</h2>
-    <div class="relative border-l border-outline-variant ml-4 md:ml-8 space-y-16">
-        <p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1">
-            During my free hours, I explore digital arts, sketching, designing, photography, and writing.<br>
-            <i>(Feel free to check out some of my recent works)</i>                    
-        </p>
-                                                                     
-        <!-- Timeline Item 1: Arts -->
-        <div class="relative pl-8 md:pl-12">
-            <div class="absolute w-3 h-3 bg-surface border-2 border-primary rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
-            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
-                <h3 class="font-headline-lg text-xl text-on-surface font-semibold">Arts</h3>
+    <!-- Section 1: Journey — mb-32→mb-14 -->
+    <section class="mb-14 relative">
+        <div class="absolute -left-12 top-0 bottom-0 w-px bg-outline-variant/50 hidden lg:block"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div class="lg:col-span-5 order-2 lg:order-1">
+                <div class="relative p-2 bg-surface-container-lowest border border-outline-variant shadow-md rounded-sm transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img class="w-full h-auto object-cover grayscale sepia-[0.3]" src="assets/img3.jpeg" alt="Portrait"/>
+                </div>
             </div>
-            
-            <!-- Art Portfolio Images -->
-            <div class="flex flex-row gap-3 md:gap-4 mt-4">
-                <img src="assets\art1.jpeg" 
-                     alt="Art Portfolio Piece 1" 
-                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <img src="assets\art2.jpeg" 
-                     alt="Art Portfolio Piece 2" 
-                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <img src="assets\art3.jpeg" 
-                     alt="Art Portfolio Piece 3" 
-                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+            <div class="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 space-y-5">
+                <h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary opacity-70">history_edu</span>
+                    My Journey and Focus
+                </h2>
+                <div class="space-y-3 text-on-surface-variant columns-1 md:columns-2 gap-8 text-justify">
+                    <p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                        I am currently pursuing my Master's in Artificial Intelligence, building upon the strong hardware and automation foundation I developed during my B.Tech in Automation and Robotics at Amrita Vishwa Vidyapeetham.
+                    </p>
+                    <p>My fascination with how machines perceive their environment drove me to specialize in computer vision in robotics, machine learning, and deep learning.</p>
+                    <p>A robot is just metal, wires, an empty shell of steel and circuits; it moves, but it cannot understand. AI becomes the intelligence within the system, giving the machine the ability to learn, adapt, and make decisions. That's where ordinary machines evolve into intelligent robots.</p>
+                    <p>My passion lies in that exact intersection, where ordinary hardware evolves into intelligent, autonomous systems and I am currently transitioning into an AI and Data Science role with a hyper-focus on Intelligent Robotics.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Timeline Item 2: Photography -->
-        <div class="relative pl-8 md:pl-12">
-            <div class="absolute w-3 h-3 bg-surface border-2 border-primary rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
-            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
-                <h3 class="font-headline-lg text-xl text-on-surface font-semibold">Photography</h3>
-            </div>
-            
-            <!-- Photography Portfolio Images -->
-            <div class="flex flex-row gap-3 md:gap-4 mt-4">
-                <img src="assets\photo1.jpeg" 
-                     alt="Photography Piece 1" 
-                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
-                <img src="assets\photo2.jpeg" 
-                     alt="Photography Piece 2" 
-                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
-                <img src="assets\photo3.jpeg" 
-                     alt="Photography Piece 3" 
-                     class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
+    <!-- Section 2: Working On — mb-32→mb-14, space-y-8→space-y-5 -->
+    <section class="mb-14 relative">
+        <div class="absolute -left-12 top-0 bottom-0 w-px bg-outline-variant/50 hidden lg:block"></div>
+        <div class="w-full space-y-5">
+            <h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary opacity-70">push_pin</span>
+                Working on
+            </h2>
+
+            <!-- Sticky-note board — gap reduced from 2.5rem to 2rem in CSS above -->
+            <!-- Pin notes now have min-height: 240px (down from 280px) -->
+            <div class="sticky-board py-5">
+
+                <!-- Note 1: Cream -->
+                <div class="sticky-note note-cream transform -rotate-1">
+                    <div class="push-pin pin-teal"></div>
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg sticky-title">Indoor Navigation &amp; Vision</h3>
+                        <p class="text-sm leading-relaxed font-body sticky-desc">
+                            Developing algorithms for the optimal placement of ArUco Tags in complex indoor environments, validated across MATLAB, Webots, and hardware setups.
+                        </p>
+                        <!--
+                        IMAGE SLOT — uncomment and fill src to show a preview:
+                        <div class="mt-2 overflow-hidden rounded border border-black/10 h-24">
+                            <img src="assets/aruco_tag_visual.jpg" alt="ArUco Tag Visual" class="w-full h-full object-cover">
+                        </div>
+                        -->
+                    </div>
+                    <div class="mt-3 pt-2 flex justify-between items-center text-xs font-sans sticky-meta">
+                        <span>Project Log 01</span>
+                        <a href="https://github.com/Abinaya-senthil774/indoor-navigation-for-robots" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 flex items-center gap-0.5 font-semibold">
+                            View repo <span class="material-symbols-outlined text-xs">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Note 2: Teal -->
+                <div class="sticky-note note-teal transform rotate-2">
+                    <div class="push-pin pin-gold"></div>
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg sticky-title">Modular Parallel Robotics</h3>
+                        <p class="text-sm leading-relaxed font-body sticky-desc">
+                            Working on Design, Kinematic Analysis, and Control of a Modular Delta-Based Parallel Robot.
+                        </p>
+                        <!--
+                        IMAGE SLOT — uncomment and fill src to show a preview:
+                        <div class="mt-2 overflow-hidden rounded border border-white/20 h-24">
+                            <img src="assets/delta_robot_kinematics.jpg" alt="Delta Robot" class="w-full h-full object-cover">
+                        </div>
+                        -->
+                    </div>
+                    <div class="mt-3 pt-2 flex justify-between items-center text-xs font-sans sticky-meta">
+                        <span>Research Draft</span>
+                        <a href="https://github.com/Abinaya-senthil774/Modular-Parallel-Robot" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 flex items-center gap-0.5 font-semibold">
+                            Read Draft <span class="material-symbols-outlined text-xs">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Note 3: Gold -->
+                <div class="sticky-note note-gold transform -rotate-2">
+                    <div class="push-pin pin-cream"></div>
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg sticky-title">AI based travel memory app</h3>
+                        <p class="text-sm leading-relaxed font-body sticky-desc">
+                            Developing an AI travel journaling platform that converts travel memories into written diary entries and social-ready content, organizing photos into meaningful stories and personalized reflections.
+                        </p>
+                        <!--
+                        IMAGE SLOT — uncomment and fill src to show a preview:
+                        <div class="mt-2 overflow-hidden rounded border border-black/10 h-24">
+                            <img src="assets/memory_artwork_preview.jpg" alt="Memory App Preview" class="w-full h-full object-cover">
+                        </div>
+
+                        LINK SLOT — uncomment to add a link:
+                        <a href="https://yourlink.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 flex items-center gap-0.5 font-semibold text-xs">
+                            View gallery <span class="material-symbols-outlined text-xs">open_in_new</span>
+                        </a>
+                        -->
+                    </div>
+                    <div class="mt-3 pt-2 flex justify-between items-center text-xs font-sans sticky-meta">
+                        <span>Art Composite</span>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
 
-        <!-- Timeline Item 3: Writings (Updated to Bullet Points) -->
-        <div class="relative pl-8 md:pl-12">
-            <div class="absolute w-3 h-3 bg-surface border-2 border-outline rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
-            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
-                <h3 class="font-headline-lg text-xl text-on-surface font-semibold">Writings</h3>
-            </div>
-            
-            <!-- Writings Portfolio Links -->
-             <!--
-            <ul class="mt-6 space-y-4">
-                <li>
-                    <a href="/assets/article-1.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 w-fit">
-                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-xl">article</span>
-                        <span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors decoration-1 underline-offset-4 group-hover:underline">The Future of AI in Robotics</span>
+    <!-- Section 3: Toolkit — mb-32→mb-14 -->
+    <section class="mb-14 max-w-5xl mx-auto">
+        <div class="text-center mb-6">
+            <span class="material-symbols-outlined text-3xl text-secondary mb-3 block">auto_awesome</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">My Toolkit</h2>
+        </div>
+
+        <div class="desk-tray">
+
+            <!-- Slot 1: Languages -->
+            <div class="tray-slot">
+                <h3 class="text-base font-bold text-primary mb-1.5 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm text-secondary">terminal</span>
+                    Languages
+                </h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Python, C++</p>
+                <!--
+                LOGO SLOT — uncomment and add logo images:
+                <div class="mt-2 flex gap-2">
+                    <img src="assets/python-logo.png" class="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" alt="Python">
+                    <img src="assets/cpp-logo.png"    class="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" alt="C++">
+                </div>
+
+                LINK SLOT — uncomment to add a link:
+                <div class="mt-3 pt-2 border-t border-black/5">
+                    <a href="https://yourlink.com" target="_blank" rel="noopener noreferrer"
+                       class="text-xs text-primary hover:underline inline-flex items-center gap-0.5 font-semibold">
+                        View code templates <span class="material-symbols-outlined text-xs">open_in_new</span>
                     </a>
-                </li>
-                <li>
-                    <a href="/assets/article-2.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 w-fit">
-                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-xl">article</span>
-                        <span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors decoration-1 underline-offset-4 group-hover:underline">Optimizing Navigation Algorithms</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/article-3.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 w-fit">
-                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-xl">article</span>
-                        <span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors decoration-1 underline-offset-4 group-hover:underline">Sustainable Tech: A 2026 Perspective</span>
-                    </a>
-                </li>
-            </ul>
+                </div>
                 -->
+            </div>
+
+            <!-- Slot 2: AI/ML & Vision -->
+            <div class="tray-slot">
+                <h3 class="text-base font-bold text-primary mb-1.5 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm text-secondary">psychology</span>
+                    AI/ML &amp; Vision
+                </h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">PyTorch, TensorFlow, OpenCV, Scikit-learn</p>
+                <!--
+                LOGO SLOT:
+                <div class="mt-2 flex gap-2">
+                    <img src="assets/pytorch-logo.png" class="h-5 w-auto opacity-70" alt="PyTorch">
+                </div>
+
+                LINK SLOT:
+                <div class="mt-3 pt-2 border-t border-black/5">
+                    <a href="https://yourlink.com" target="_blank" rel="noopener noreferrer"
+                       class="text-xs text-primary hover:underline inline-flex items-center gap-0.5 font-semibold">
+                        View ML notes <span class="material-symbols-outlined text-xs">open_in_new</span>
+                    </a>
+                </div>
+                -->
+            </div>
+
+            <!-- Slot 3: Robotics & Simulation -->
+            <div class="tray-slot">
+                <h3 class="text-base font-bold text-primary mb-1.5 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm text-secondary">precision_manufacturing</span>
+                    Robotics &amp; Simulation
+                </h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">ROS2, Gazebo, Webots</p>
+                <!--
+                LOGO SLOT:
+                <div class="mt-2 flex gap-2">
+                    <img src="assets/ros-logo.png" class="h-5 w-auto opacity-70" alt="ROS">
+                </div>
+
+                LINK SLOT:
+                <div class="mt-3 pt-2 border-t border-black/5">
+                    <a href="https://yourlink.com" target="_blank" rel="noopener noreferrer"
+                       class="text-xs text-primary hover:underline inline-flex items-center gap-0.5 font-semibold">
+                        View simulation environment <span class="material-symbols-outlined text-xs">open_in_new</span>
+                    </a>
+                </div>
+                -->
+            </div>
+
+            <!-- Slot 4: Hardware & IoT -->
+            <div class="tray-slot">
+                <h3 class="text-base font-bold text-primary mb-1.5 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm text-secondary">memory</span>
+                    Hardware &amp; IoT
+                </h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Arduino Mega 2560, Raspberry Pi, ESP32</p>
+                <!--
+                LOGO SLOT:
+                <div class="mt-2 flex gap-2">
+                    <img src="assets/arduino-logo.png" class="h-5 w-auto opacity-70" alt="Arduino">
+                </div>
+
+                LINK SLOT:
+                <div class="mt-3 pt-2 border-t border-black/5">
+                    <a href="https://yourlink.com" target="_blank" rel="noopener noreferrer"
+                       class="text-xs text-primary hover:underline inline-flex items-center gap-0.5 font-semibold">
+                        View wiring schemes <span class="material-symbols-outlined text-xs">open_in_new</span>
+                    </a>
+                </div>
+                -->
+            </div>
+
         </div>
+    </section>
 
+    <!-- Decorative Divider — h-24+mb-32 → h-10+mb-10 -->
+    <div class="w-full h-10 mb-10 relative flex items-center justify-center">
+        <div class="absolute w-full h-px bg-outline-variant"></div>
+        <div class="bg-surface px-4 z-10 flex gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary/40"></span>
+            <span class="w-2 h-2 rounded-full bg-primary/60"></span>
+            <span class="w-2 h-2 rounded-full bg-primary/40"></span>
+        </div>
     </div>
-</section>
 
-<!-- Call to Action -->
-<div class="text-center mt-32 border-t border-outline-variant pt-16">
-<p class="font-body-lg text-on-surface-variant mb-6">To discuss a potential collaboration or inquire about the archives:</p>
-<a class="inline-flex items-center gap-2 bg-tertiary text-on-tertiary px-8 py-4 rounded-sm font-label-md tracking-wider hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors shadow-md border border-tertiary/80" href="contact.html">
-<span class="material-symbols-outlined text-sm">mail</span>
-                     Contact at
-                 </a>
+    <!-- Section 4: Beyond the Code — space-y-16→space-y-10, mb-24→mb-12 -->
+    <section class="mb-12 max-w-3xl mx-auto">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-8 text-center">Beyond the Code</h2>
+        <div class="relative border-l border-outline-variant ml-4 md:ml-8 space-y-10">
+            <p class="first-letter:text-5xl first-letter:font-headline-xl first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                During my free hours, I explore digital arts, sketching, designing, photography, and writing.<br>
+                <i>(Feel free to check out some of my recent works below, more collections on Instagram:
+                <a href="https://www.instagram.com/wrapped.in.wine?igsh=b3M5NXJsbmE2Mnlh" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline decoration-1 underline-offset-4 font-semibold">@wrapped.in.wine</a>)</i>
+            </p>
+
+            <!-- Arts -->
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute w-3 h-3 bg-surface border-2 border-primary rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
+                <h3 class="font-headline-lg text-xl text-on-surface font-semibold mb-3">Arts</h3>
+                <div class="flex flex-row gap-3 md:gap-4">
+                    <img src="assets\art1.jpeg" alt="Art Portfolio Piece 1" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                    <img src="assets\art2.jpeg" alt="Art Portfolio Piece 2" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                    <img src="assets\art3.jpeg" alt="Art Portfolio Piece 3" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                </div>
+                <div class="mt-2">
+                    <a href="https://www.instagram.com/wrapped.in.wine?igsh=b3M5NXJsbmE2Mnlh" target="_blank" rel="noopener noreferrer" class="text-label-sm font-label-md text-on-surface-variant hover:text-primary inline-flex items-center gap-1 transition-colors">
+                        <span class="material-symbols-outlined text-sm">open_in_new</span> View more drawings
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photography -->
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute w-3 h-3 bg-surface border-2 border-primary rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
+                <h3 class="font-headline-lg text-xl text-on-surface font-semibold mb-3">Photography</h3>
+                <div class="flex flex-row gap-3 md:gap-4">
+                    <img src="assets\photo1.jpeg" alt="Photography Piece 1" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
+                    <img src="assets\photo2.jpeg" alt="Photography Piece 2" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
+                    <img src="assets\photo3.jpeg" alt="Photography Piece 3" class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-sm border border-outline-variant/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 grayscale-[0.5] hover:grayscale-0">
+                </div>
+            </div>
+
+            <!-- Writings -->
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute w-3 h-3 bg-surface border-2 border-primary rounded-full -left-[6.5px] top-2 ring-4 ring-surface"></div>
+                <h3 class="font-headline-lg text-xl text-on-surface font-semibold mb-3">Writings</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="https://medium.com/@Mayzee-s/in-a-world-that-never-rests-we-forgot-the-rusty-swings-54d04612fdad" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 w-fit">
+                            <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-xl">article</span>
+                            <span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors decoration-1 underline-offset-4 group-hover:underline italic">
+                                In a world that never rests, we forgot the rusty swings
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action — mt-32→mt-12 -->
+    <div class="text-center mt-12 border-t border-outline-variant pt-10">
+        <p class="font-body-lg text-on-surface-variant mb-5">To discuss a potential collaboration or inquire about the archives:</p>
+        <a class="inline-flex items-center gap-2 bg-tertiary text-on-tertiary px-8 py-4 rounded-sm font-label-md tracking-wider hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors shadow-md border border-tertiary/80" href="contact.html">
+            <span class="material-symbols-outlined text-sm">mail</span>
+            Contact at
+        </a>
+    </div>
+
 </div>
-</div>
+
 <!-- Footer -->
 <div class="fixed bottom-4 right-4 bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full shadow-lg z-50 flex gap-4">
-    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
+    <a href="https://1drv.ms/f/c/dd6c143259f168f6/IgDFh02Hw6NbQZPuwWVFY9lIAQvvmcZXnLb6NDqeH5HQXHc?e=iBzvOh" target="_blank" rel="noopener noreferrer" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
     <a href="colophon.html" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
 </div>
 </main>
+
 <script src="site.js"></script>
 </body></html>

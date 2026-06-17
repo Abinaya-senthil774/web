@@ -38,9 +38,10 @@
 
   .frames-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     width: 100%;
+    gap: clamp(16px, 3vw, 40px);
   }
 
   .frame-hang {
@@ -48,7 +49,6 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    flex: 1;
     position: relative;
     z-index: 1;
     transition: z-index 0s;
@@ -65,7 +65,8 @@
   .cert-frame-outer {
     padding: 8px;
     background: #3a2010;
-    box-shadow: 3px 6px 20px rgba(0,0,0,0.4), inset 1px 1px 0 rgba(255,255,255,0.06);
+    /* calm resting shadow — grounded, not floating. Hover adds the lift. */
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.28), inset 1px 1px 0 rgba(255,255,255,0.06);
     flex-shrink: 0;
     transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
     position: relative;
@@ -81,8 +82,8 @@
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    width: 150px;
-    height: 200px;
+    width: 162px;
+    height: 208px;
   }
 
   .fh-0 .cert-frame-outer { transform: rotate(-2deg); }
@@ -97,7 +98,7 @@
   }
 
   .frame-hang:hover .hang-svg .string-line {
-    animation: stringsway 1.8s ease-in-out infinite alternate;
+    /* animation: stringsway 1.8s ease-in-out infinite alternate; */
     transform-origin: 50% 0%;
   }
   @keyframes stringsway {
@@ -107,7 +108,7 @@
 
   .cert-img-area {
     width: 100%;
-    height: 120px;
+    height: 128px;
     overflow: hidden;
     flex-shrink: 0;
     background: #e0dcd4;
@@ -129,7 +130,7 @@
   }
 
   .cert-text-area {
-    padding: 8px 8px 6px;
+    padding: 9px 8px 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +141,7 @@
   }
   .cert-title {
     font-family: 'Newsreader', Georgia, serif;
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 700;
     color: #1e1a17;
     line-height: 1.3;
@@ -339,12 +340,12 @@
 </aside>
 
 <!-- Main Content Canvas -->
-<main class="flex-1 md:ml-[300px] min-h-screen paper-texture relative pb-24">
+<main class="flex-1 md:ml-[300px] min-h-screen paper-texture relative pb-16">
 
   <!-- Page Header -->
-  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 md:pt-24 pb-12">
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-10 md:pt-14 pb-6">
     <div class="text-center max-w-2xl mx-auto">
-      <header class="text-center mb-16 max-w-3xl mx-auto">
+      <header class="text-center mb-10 max-w-3xl mx-auto">
         <div class="inline-flex items-center justify-center gap-4 mb-6">
           <div class="h-px w-12 bg-primary"></div>
           <span class="font-label-md text-label-md text-primary uppercase tracking-widest">III</span>
@@ -359,9 +360,9 @@
   <!-- ═══════════════════════════════════════════ -->
   <!-- CERTIFICATIONS GALLERY                      -->
   <!-- ═══════════════════════════════════════════ -->
-  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-14">
 
-    <div class="relative pl-8 md:pl-12 mb-12">
+    <div class="relative pl-8 md:pl-12 mb-8">
       <div class="absolute left-0 top-0 bottom-0 w-2 rounded-r-sm shadow-sm" style="background:#b8934a;"></div>
       <h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 border-b border-outline-variant pb-2 inline-block">Certifications</h3>
     </div>
@@ -369,14 +370,14 @@
     <div class="cert-gallery" id="certGallery">
       <div class="frames-row">
 
-        <!-- ── Frame 0 : ROS2 ── -->
+        <!-- ── Frame 0 : Coursera ── -->
         <div class="frame-hang fh-0" data-cert="0">
-          <svg class="hang-svg" viewBox="0 0 100 88" height="88" preserveAspectRatio="none" style="height:88px;">
+          <svg class="hang-svg" viewBox="0 0 100 84" height="84" preserveAspectRatio="none" style="height:84px;">
             <rect x="0" y="4" width="100" height="6" rx="3" fill="#3a2e24"/>
             <rect x="0" y="4" width="100" height="2" rx="1" fill="#5a4a38" opacity="0.6"/>
             <circle cx="50" cy="7" r="7" fill="url(#nailgrad)" filter="url(#nailshadow)"/>
             <circle cx="48" cy="5" r="2.5" fill="rgba(255,255,255,0.28)"/>
-            <line class="string-line" x1="50" y1="14" x2="50" y2="88" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
+            <line class="string-line" x1="50" y1="14" x2="50" y2="84" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
             <defs>
               <radialGradient id="nailgrad" cx="38%" cy="35%" r="60%">
                 <stop offset="0%" stop-color="#d4c4a0"/>
@@ -391,7 +392,7 @@
             <div class="cert-frame-inner">
               <div class="cert-mat">
                 <div class="cert-img-area">
-                  <img src="assets/Coursera.png" alt="ROS2 Certificate">
+                  <img src="assets/Coursera.png" alt="Neural Networks and Deep Learning Certificate">
                 </div>
                 <div class="cert-text-area">
                   <div class="cert-title">Neural Networks and Deep Learning</div>
@@ -403,14 +404,14 @@
           </div>
         </div>
 
-        <!-- ── Frame 1 : ML Specialization ── -->
+        <!-- ── Frame 1 : DELCON ── -->
         <div class="frame-hang fh-1" data-cert="1">
-          <svg class="hang-svg" viewBox="0 0 100 96" height="96" preserveAspectRatio="none" style="height:96px;">
+          <svg class="hang-svg" viewBox="0 0 100 84" height="84" preserveAspectRatio="none" style="height:84px;">
             <rect x="0" y="4" width="100" height="6" rx="3" fill="#3a2e24"/>
             <rect x="0" y="4" width="100" height="2" rx="1" fill="#5a4a38" opacity="0.6"/>
             <circle cx="50" cy="7" r="7" fill="url(#nailgrad)" filter="url(#nailshadow)"/>
             <circle cx="48" cy="5" r="2.5" fill="rgba(255,255,255,0.28)"/>
-            <line class="string-line" x1="50" y1="14" x2="50" y2="96" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
+            <line class="string-line" x1="50" y1="14" x2="50" y2="84" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
           <div class="cert-frame-outer">
             <div class="cert-frame-inner">
@@ -428,14 +429,14 @@
           </div>
         </div>
 
-        <!-- ── Frame 2 : Computer Vision ── -->
+        <!-- ── Frame 2 : IJCACI ── -->
         <div class="frame-hang fh-2" data-cert="2">
-          <svg class="hang-svg" viewBox="0 0 100 72" height="72" preserveAspectRatio="none" style="height:72px;">
+          <svg class="hang-svg" viewBox="0 0 100 84" height="84" preserveAspectRatio="none" style="height:84px;">
             <rect x="0" y="4" width="100" height="6" rx="3" fill="#3a2e24"/>
             <rect x="0" y="4" width="100" height="2" rx="1" fill="#5a4a38" opacity="0.6"/>
             <circle cx="50" cy="7" r="7" fill="url(#nailgrad)" filter="url(#nailshadow)"/>
             <circle cx="48" cy="5" r="2.5" fill="rgba(255,255,255,0.28)"/>
-            <line class="string-line" x1="50" y1="14" x2="50" y2="72" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
+            <line class="string-line" x1="50" y1="14" x2="50" y2="84" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
           <div class="cert-frame-outer">
             <div class="cert-frame-inner">
@@ -453,14 +454,14 @@
           </div>
         </div>
 
-        <!-- ── Frame 3 : MATLAB ── -->
+        <!-- ── Frame 3 : NPDSM ── -->
         <div class="frame-hang fh-3" data-cert="3">
-          <svg class="hang-svg" viewBox="0 0 100 90" height="90" preserveAspectRatio="none" style="height:90px;">
+          <svg class="hang-svg" viewBox="0 0 100 84" height="84" preserveAspectRatio="none" style="height:84px;">
             <rect x="0" y="4" width="100" height="6" rx="3" fill="#3a2e24"/>
             <rect x="0" y="4" width="100" height="2" rx="1" fill="#5a4a38" opacity="0.6"/>
             <circle cx="50" cy="7" r="7" fill="url(#nailgrad)" filter="url(#nailshadow)"/>
             <circle cx="48" cy="5" r="2.5" fill="rgba(255,255,255,0.28)"/>
-            <line class="string-line" x1="50" y1="14" x2="50" y2="90" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
+            <line class="string-line" x1="50" y1="14" x2="50" y2="84" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
           <div class="cert-frame-outer">
             <div class="cert-frame-inner">
@@ -478,14 +479,14 @@
           </div>
         </div>
 
-        <!-- ── Frame 4 : AutoCAD ── -->
+        <!-- ── Frame 4 : AWS ── -->
         <div class="frame-hang fh-4" data-cert="4">
-          <svg class="hang-svg" viewBox="0 0 100 80" height="80" preserveAspectRatio="none" style="height:80px;">
+          <svg class="hang-svg" viewBox="0 0 100 84" height="84" preserveAspectRatio="none" style="height:84px;">
             <rect x="0" y="4" width="100" height="6" rx="3" fill="#3a2e24"/>
             <rect x="0" y="4" width="100" height="2" rx="1" fill="#5a4a38" opacity="0.6"/>
             <circle cx="50" cy="7" r="7" fill="url(#nailgrad)" filter="url(#nailshadow)"/>
             <circle cx="48" cy="5" r="2.5" fill="rgba(255,255,255,0.28)"/>
-            <line class="string-line" x1="50" y1="14" x2="50" y2="80" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
+            <line class="string-line" x1="50" y1="14" x2="50" y2="84" stroke="#a08060" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
           <div class="cert-frame-outer">
             <div class="cert-frame-inner">
@@ -507,122 +508,178 @@
     </div><!-- /cert-gallery -->
   </section>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- EXPANDED CERT OVERLAY                       -->
-  <!-- NOTE: moved outside <main> so fixed         -->
-  <!-- positioning is relative to the viewport,    -->
-  <!-- not the scrolling main container.           -->
-  <!-- ═══════════════════════════════════════════ -->
-
   <!-- Divider -->
-  <div class="my-16 w-full h-10 torn-edge-top bg-surface-container-low opacity-50 relative"></div>
+  <div class="my-10 w-full h-10 torn-edge-top bg-surface-container-low opacity-50 relative"></div>
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- SKILLS SECTION                              -->
   <!-- ═══════════════════════════════════════════ -->
-  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
-    <div class="relative pl-8 md:pl-12 mb-12">
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-10">
+    <div class="relative pl-8 md:pl-12 mb-8">
       <div class="absolute left-0 top-0 bottom-0 w-2 rounded-r-sm shadow-sm" style="background:#b8934a;"></div>
       <h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 border-b border-outline-variant pb-2 inline-block">Skills</h3>
     </div>
 
-
     <!-- Programming Languages -->
     <div class="relative pl-8 md:pl-12">
       <div class="absolute left-0 top-0 bottom-0 w-2 bg-primary-container rounded-r-sm shadow-sm"></div>
-      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 border-b border-outline-variant pb-2 inline-block">Programming Languages</h3>
-      <div class="flex flex-wrap gap-6">
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 border-b border-outline-variant pb-2 inline-block">Programming Languages</h3>
+      <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">Python</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-primary-container/30 group-hover:bg-primary-container/45 transition-colors" style="height:90%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase">Python</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">90%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">JavaScript</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">50%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-primary-container/30 group-hover:bg-primary-container/45 transition-colors" style="height:50%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase">JavaScript</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">70%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">C++</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">75%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-primary-container/30 group-hover:bg-primary-container/45 transition-colors" style="height:75%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase">C++</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">75%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">HTML/CSS</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">75%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-primary-container/30 group-hover:bg-primary-container/45 transition-colors" style="height:75%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase">HTML/CSS</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">75%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-primary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase mt-2">MATLAB</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">85%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-primary-container/30 group-hover:bg-primary-container/45 transition-colors" style="height:85%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors tracking-widest uppercase">MATLAB</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">85%</span>
+          </div>
         </div>
+
       </div>
     </div>
 
     <!-- Simulation and Design Tools -->
     <div class="relative pl-8 md:pl-12">
       <div class="absolute left-0 top-0 bottom-0 w-2 bg-secondary rounded-r-sm shadow-sm"></div>
-      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 border-b border-outline-variant pb-2 inline-block">Simulation and Design Tools</h3>
-      <div class="flex flex-wrap gap-6">
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 border-b border-outline-variant pb-2 inline-block">Simulation and Design Tools</h3>
+      <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">ROS2</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-secondary-container/30 group-hover:bg-secondary-container/45 transition-colors" style="height:90%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase">ROS2</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">90%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">Webots</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-secondary-container/30 group-hover:bg-secondary-container/45 transition-colors" style="height:90%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase">Webots</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">90%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">AutoCAD</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">95%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-secondary-container/30 group-hover:bg-secondary-container/45 transition-colors" style="height:95%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase">AutoCAD</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">95%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-secondary-container"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase mt-2">Fusion 360</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">95%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-secondary-container/30 group-hover:bg-secondary-container/45 transition-colors" style="height:95%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-secondary transition-colors tracking-widest uppercase">Fusion 360</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">95%</span>
+          </div>
         </div>
+
       </div>
     </div>
 
     <!-- Tools & Frameworks -->
     <div class="relative pl-8 md:pl-12">
       <div class="absolute left-0 top-0 bottom-0 w-2 bg-outline rounded-r-sm shadow-sm"></div>
-      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 border-b border-outline-variant pb-2 inline-block">Tools &amp; Frameworks</h3>
-      <div class="flex flex-wrap gap-6">
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 border-b border-outline-variant pb-2 inline-block">Tools &amp; Frameworks</h3>
+      <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">Git/GitHub</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-outline-variant/40 group-hover:bg-outline-variant/55 transition-colors" style="height:90%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase">AWS Cloud</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">85%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+        
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">PyTorch</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">90%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-outline-variant/40 group-hover:bg-outline-variant/55 transition-colors" style="height:90%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase">Git/GitHub</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">90%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">TensorFlow and Keras</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">85%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-outline-variant/40 group-hover:bg-outline-variant/55 transition-colors" style="height:90%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase">PyTorch</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">90%</span>
+          </div>
         </div>
-        <div class="w-20 md:w-24 h-56 bg-surface-container-lowest ambient-shadow flex flex-col items-center justify-between pt-6 pb-6 cursor-pointer hover:-translate-y-2 transition-transform relative group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 16px), 0 100%);">
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
           <div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
-          <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase mt-2">OpenCV</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">95%</span>
+          <div class="absolute inset-x-0 bottom-0 bg-outline-variant/40 group-hover:bg-outline-variant/55 transition-colors" style="height:85%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase">TensorFlow &amp; Keras</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">85%</span>
+          </div>
         </div>
+
+        <div class="relative h-44 bg-surface-container-lowest ambient-shadow overflow-hidden flex flex-col items-center cursor-default hover:-translate-y-1 transition-transform group" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 14px), 0 100%);">
+          <div class="absolute top-0 left-0 w-full h-2 bg-outline-variant"></div>
+          <div class="absolute inset-x-0 bottom-0 bg-outline-variant/40 group-hover:bg-outline-variant/55 transition-colors" style="height:95%;"></div>
+          <div class="relative z-10 flex flex-col items-center justify-between h-full pt-7 pb-5">
+            <span class="writing-vertical font-label-md text-label-md text-on-surface group-hover:text-on-surface-variant transition-colors tracking-widest uppercase">OpenCV</span>
+            <span class="font-body-md text-body-md text-on-surface-variant font-semibold">95%</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Divider -->
-  <div class="my-16 w-full h-10 torn-edge-top bg-surface-container-low opacity-50 relative"></div>
+  <div class="my-10 w-full h-10 torn-edge-top bg-surface-container-low opacity-50 relative"></div>
 
   <!-- Core Competencies -->
-  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
-    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 text-center">Core Competencies</h3>
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12">
+    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 text-center">Core Competencies</h3>
     <div class="flex flex-wrap justify-center gap-4">
       <span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors"><span class="material-symbols-outlined text-sm">memory</span><span>Machine Learning</span></span>
       <span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors"><span class="material-symbols-outlined text-sm">visibility</span><span>Computer Vision</span></span>
@@ -634,8 +691,8 @@
   </section>
 
   <!-- General Skills -->
-  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
-    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-8 text-center">General Skills</h3>
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-10">
+    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 text-center">General Skills</h3>
     <div class="flex flex-wrap justify-center gap-4">
       <span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors"><span class="material-symbols-outlined text-sm">memory</span><span>Technical communication</span></span>
       <span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md px-4 py-2 rounded-sm border border-secondary-fixed-dim/50 shadow-sm flex items-center space-x-2 cursor-default hover:bg-secondary-container transition-colors"><span class="material-symbols-outlined text-sm">visibility</span><span>Team Collaboration</span></span>
@@ -646,8 +703,8 @@
 
   <!-- Footer pill -->
   <div class="fixed bottom-4 right-4 bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full shadow-lg z-50 flex gap-4">
-    <a href="#" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
-    <a href="colophon.html" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
+      <a href="https://1drv.ms/f/c/dd6c143259f168f6/IgDFh02Hw6NbQZPuwWVFY9lIAQvvmcZXnLb6NDqeH5HQXHc?e=iBzvOh" target="_blank" rel="noopener noreferrer" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Archive</a>
+      <a href="colophon.html" class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Colophon</a>
   </div>
 </main>
 
@@ -721,7 +778,7 @@
     },
     {
       badge: '4',
-      img: '↺',
+      img: '',
       title: 'Publication of Conference Paper',
       issuer: 'NPDSM',
       year: '2026',
